@@ -17,10 +17,11 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from .views import home_page
+from .views import home_page,footer
 
 urlpatterns = [
     path('', home_page),
+    path('footer',footer,name='footer'),
     path('admin/', admin.site.urls),
 ]
 

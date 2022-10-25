@@ -1,4 +1,4 @@
-{% load static %}
+{% load static %} {% load render_partial %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -42,14 +42,20 @@
         </p>
       </form>
     </div>
-    <!-- ---------------------------------- content -------------------------------- -->
-    {% block content %}{% endblock %} {% include './footer.html' %}
-    <!-- ----------------------------------- Loader ----------------------------------- -->
 
+    <!-- ---------------------------------- content -------------------------------- -->
+    {% block content %}{% endblock %}
+
+    <!-- ------------- footer-----------------------  -->
+    {% render_partial 'footer' %}
+
+
+    <!-- ----------------------------------- Loader ----------------------------------- -->
     <div class="loader-container">
-        <img src="{% static 'images/loader-img-y.gif' %}" alt="">
+      <img src="{% static 'images/loader-img-y.gif' %}" alt="" />
     </div>
 
+    <!-- ================= footer references ====================    -->
     {% include './_footerReferences.html' %}
   </body>
 </html>
