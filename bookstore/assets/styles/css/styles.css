@@ -1,3 +1,4 @@
+
 :root {
   --color: #f0c808;
   --color-btn: #b19610;
@@ -142,16 +143,16 @@ nav .btn-light:hover {
 }
 
 .slide1 {
-  background: linear-gradient(#070e3d10, #070e3d10), url(../../image/blog-1.jpg);
+  background: linear-gradient(#070e3d10, #070e3d10), url(../../images/blog-1.jpg);
 }
 
 .slide2 {
   background: linear-gradient(#070e3d10, #070e3d10),
-    url(../../image/library1.jpg);
+    url(../../images/library1.jpg);
 }
 
 .slide3 {
-  background: linear-gradient(#070e3d10, #070e3d10), url(../../image/blog-3.jpg);
+  background: linear-gradient(#070e3d10, #070e3d10), url(../../images/blog-3.jpg);
 }
 
 .bg-cover {
