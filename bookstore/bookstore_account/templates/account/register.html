@@ -1,0 +1,122 @@
+{% extends '../shared/_mainLayout.html' %} {% block content %}
+{% load static %}
+<div class="new_account_header">
+  <header class="heading"><span> Create New Account</span></header>
+</div>
+<div class="container px-4">
+  <div class="container mt-4 mx-auto" id="container">
+    <form class="row">
+      <div class="col-md-6" id="leftCtn">
+        <div class="mb-4">
+          <img
+            src="{% static 'images/pic-4.png' %}"
+            class="mx-auto d-block"
+            id="uploadImage"
+            alt="..."
+          />
+        </div>
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-8">
+            <div class="row mb-3">
+              <label for="" class="col-sm-3 col-form-label text-white"
+                >Name</label
+              >
+              <div class="col-sm-9">
+                <input type="text" class="form-control" id="" />
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="" class="col-sm-3 col-form-label text-white"
+                >Email</label
+              >
+              <div class="col-sm-9">
+                <input type="email" class="form-control" id="" />
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="" class="col-sm-3 col-form-label text-white"
+                >Password</label
+              >
+              <div class="col-sm-9">
+                <input type="password" class="form-control" id="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6" id="rightCtn">
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-8">
+            <div class="row mb-3">
+              <label for="" class="col-sm-3 col-form-label">City</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" id="" />
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="" class="col-sm-3 col-form-label">Address</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" id="" />
+              </div>
+            </div>
+            <fieldset class="row mb-3">
+              <legend class="col-form-label col-sm-3 pt-0">Gender</legend>
+              <div class="col-sm-9">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="gridRadios"
+                    id="gridRadios1"
+                    value="option1"
+                    checked
+                  />
+                  <label class="form-check-label" for="gridRadios1">
+                    Male
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="gridRadios"
+                    id="gridRadios2"
+                    value="option2"
+                  />
+                  <label class="form-check-label" for="gridRadios2">
+                    Female
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+            <div class="row mb-3">
+              <label for="" class="col-sm-3 col-form-label"
+                ><small> Phone Number</small></label
+              >
+              <div class="col-sm-9">
+                <input type="text" class="form-control" id="" />
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="" class="col-sm-3 col-form-label"
+                ><small> Whatsapp Number</small></label
+              >
+              <div class="col-sm-9">
+                <input type="text" class="form-control" id="" />
+              </div>
+            </div>
+          </div>
+          <div class="row d-grid gap-2 col-6 mx-auto">
+            <button class="btn btn-warning text-white" type="submit">
+              Sign up
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
