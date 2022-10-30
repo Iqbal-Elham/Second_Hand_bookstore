@@ -5,16 +5,9 @@ document.querySelector('#search-btn').onclick = () => {
     searchForm.classList.toggle('active');
 }
 
-let loginForm = document.querySelector('.login-form-container');
-document.querySelector('#login-btn').onclick = () => {
-    loginForm.classList.toggle('active');
-}
-document.querySelector('#close-login-btn').onclick = () => {
-    loginForm.classList.remove('active');
-}
 
 
-$(window).on("load" , function(){
+$(window).on("load", function () {
     $(".loader-container").fadeOut("slow");
 })
 
@@ -28,14 +21,14 @@ $(document).ready(function () {
         margin: 0,
         nav: true,
         items: 1,
-        smartSpeed: 2000,
+        smartSpeed: 1000,
         dots: false,
         navText: ['<', '>'],
         autoplay:
-    {
-        delay: 4000,
-        disableOnInteraction: false,
-    },
+        {
+            delay: 4000,
+            disableOnInteraction: false,
+        },
         responsive: {
             0: {
 
@@ -101,7 +94,7 @@ var swiper = new Swiper(".arrivals-slider", {
         {
             slidesPerView: 1,
         },
-    
+
         768:
         {
             slidesPerView: 2,

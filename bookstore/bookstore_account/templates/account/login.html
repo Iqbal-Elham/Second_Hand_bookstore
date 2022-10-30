@@ -1,24 +1,14 @@
+{% extends 'shared/_mainLayout.html' %}
+
 
  <!-- ----------------------Login Form -------------------------- -->
+ {% block content %}
  <div class="login-form-container">
-    <div id="close-login-btn" class="fa-solid fa-circle-xmark"></div>
-    <form action="">
+    <!-- <div id="close-login-btn" class="fa-solid fa-circle-xmark"></div> -->
+    <form method="post">
       <h3>Sign in</h3>
-      <span>Username</span>
-      <input
-        type="email"
-        name=""
-        id=""
-        class="box"
-        placeholder="Enter your email"
-      />
-      <span>Password</span>
-      <input
-        type="password"
-        name=""
-        class="box"
-        placeholder="Enter your password"
-      />
+      {% csrf_token %}
+      {{ loginForm }}
       <div class="checkbox">
         <input type="checkbox" name="" id="remember-me" />
         <label for="remember-me">Remember me</label>
@@ -30,3 +20,4 @@
       </p>
     </form>
   </div>
+  {% endblock %}

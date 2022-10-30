@@ -231,21 +231,21 @@ nav .btn-light:hover {
   /* background: rgb(255, 255, 255, .7); */
   position: fixed;
   top: 0;
-  right: -105%;
+  /* right: -105%; */
   z-index: 10000;
   height: 100%;
   width: 100%;
   background: rgba(60, 56, 34, 0.25);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(44px);
+  -webkit-backdrop-filter: blur(44px);
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.822);
 }
 
-.login-form-container.active {
+/* .login-form-container.active {
   right: 0;
-}
+} */
 
 .login-form-container form {
   /* background: #fff; */
