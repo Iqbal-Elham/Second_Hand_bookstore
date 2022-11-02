@@ -7,16 +7,14 @@
   <form method="post">
     <h3>Sign in</h3>
     {% csrf_token %}
-    <label for="loginForm.user_name.id_for_label"
-      >{{ loginForm.user_name.label }}</label
-    >
-    {{loginForm.user_name}} {% for error in loginForm.user_name.errors %}
+    <label for="loginForm.user_name.id_for_label">{{ loginForm.user_name.label }}</label>
+    {{loginForm.user_name}}
+    {% for error in loginForm.user_name.errors %}
     <p style="color: red; padding: 0.3rem">{{error}}</p>
     {% endfor %}
-    <label for="loginForm.password.id_for_label"
-      >{{ loginForm.password.label }}</label
-    >
-    {{loginForm.password}} {% for error in loginForm.password.errors %}
+    <label for="loginForm.password.id_for_label">{{ loginForm.password.label }}</label>
+    {{loginForm.password}}
+     {% for error in loginForm.password.errors %}
     <p style="color: red">{{error}}</p>
     {% endfor %}
     <div class="checkbox">
