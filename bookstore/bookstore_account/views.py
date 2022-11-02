@@ -13,11 +13,14 @@ def login_page(request):
         user = authenticate(request, username = username, password = password)
         if user is not None:
             login(request, user)
+        else:
+            form.add_error("user_name", "Username not Found")
     context = {
         "loginForm" : form 
     }
     if request.user.is_authenticated:
         return redirect("/")
+        
     return render(request, 'account/login.html',context)
 
 def register(request):
