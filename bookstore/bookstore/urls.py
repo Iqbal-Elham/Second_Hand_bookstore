@@ -22,6 +22,7 @@ from .views import home_page,footer
 urlpatterns = [
     path('', home_page),
     path('',include('bookstore_account.urls')),
+    path('',include('bookstore_products.urls')),
     path('footer',footer,name='footer'),
     path('admin/', admin.site.urls),
 ]
