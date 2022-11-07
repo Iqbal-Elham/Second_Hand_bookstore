@@ -10,3 +10,7 @@ class productsList(ListView):
 
     def get_queryset(self):
         return product.objects.get_active_products()
+
+
+def productDetails(request):
+    return render(request, './product_details.html',{})

@@ -1,4 +1,3 @@
-
 :root {
   --color: #f0c808;
   --color-btn: #b19610;
@@ -7,6 +6,7 @@
   --border-hover: 0.1rem solid var(--black);
   --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
 }
+
 body {
   background-color: #eee;
 }
@@ -23,12 +23,13 @@ body {
   transition: all 0.2s linear;
   transition: width none;
 }
+
 a {
   text-decoration: none;
   color: white;
 }
-a:hover
-{
+
+a:hover {
   color: white;
 }
 
@@ -56,9 +57,11 @@ html {
 .bg-warning {
   background: var(--color) !important;
 }
+
 #nav1-icons button {
   border: none;
 }
+
 #nav1-icons button:hover {
   background-color: var(--color);
   border: none;
@@ -440,6 +443,7 @@ nav .btn-light:hover {
   font-size: 30px !important;
   border-radius: 100% !important;
 }
+
 .swiper-button-next::after,
 .swiper-button-prev::after {
   font-size: 1rem;
@@ -451,6 +455,7 @@ nav .btn-light:hover {
 
   color: var(--black) !important;
 }
+
 /* ---------------------------- Arrivals Design ------------------------------ */
 
 .arrivals .arrivals-slider .box {
@@ -533,6 +538,7 @@ nav .btn-light:hover {
 .footer .box-contain .box map {
   width: 100%;
 }
+
 .footer .share {
   padding: 0.9rem 0;
   text-align: center;
@@ -582,6 +588,7 @@ nav .btn-light:hover {
 .loader-container img {
   height: 10rem;
 }
+
 .loader-container.active {
   display: none;
 }
@@ -629,6 +636,7 @@ nav .btn-light:hover {
 #pages nav ul li a {
   color: var(--black) !important;
 }
+
 #pages nav ul .active {
   background-color: var(--color) !important;
 }
@@ -665,11 +673,13 @@ nav .btn-light:hover {
 #uploadImage {
   border-radius: 90px !important;
 }
+
 .new_account_header {
   margin-top: 1.6rem;
   text-align: center;
   font-size: x-large;
 }
+
 .new_account_header .heading span {
   border: 2px solid;
   border-color: var(--color);
@@ -686,6 +696,7 @@ nav .btn-light:hover {
     padding: 1rem;
     margin: 2rem;
   }
+
   #nav2 {
     display: none;
   }
@@ -712,7 +723,157 @@ nav .btn-light:hover {
   #bottom-navbar {
     display: flex !important;
   }
+
   .footer .credit {
     margin-bottom: 2.5rem;
+  }
+}
+
+/* ----------------- books details ---------------------- */
+
+.detail-category
+{
+  order: 22;
+  width: 90%;  
+}
+
+.book-detail {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+
+}
+
+.book-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.book-image {
+  background-color: #fff;
+  padding: 2.5rem;
+  border-radius: 2.5rem;
+  box-shadow: var(--box-shadow);
+  /* margin: 2rem 0; */
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.book-image img {
+  border: 3px solid var(--color);
+  border-radius: 2.7rem;
+  box-shadow: var(--box-shadow);
+
+}
+
+
+.description {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 2.5rem;
+  width: 90%;
+  box-shadow: var(--box-shadow);
+
+}
+
+.desc-table {
+
+  font-size: 18px;
+}
+
+.desc-book-title {
+  font-size: 24px;
+  font-weight: 600;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+/* .owner 
+{
+  margin: 2.5rem 0;
+} */
+.owner img {
+  display: block;
+  border-radius: 50%;
+  margin: 1.5rem auto;
+}
+
+.owner table td {
+  padding: 0 6px;
+}
+
+.owner-icons {
+  display: flex;
+  margin-top: 1.2rem;
+  flex-direction: column;
+  font-size: 16px;
+  gap: 0.4rem;
+}
+
+.description form button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+@media screen and (min-width: 768px) {
+  .book-detail {
+    display: grid;
+    grid-template-columns: 0.6fr 1fr 1fr;
+    grid-auto-rows: repeat(3, 1fr);
+    place-items: center;
+    gap: 1rem;
+    margin: 2rem;
+  }
+
+  .book-section {
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+    grid-column: 2/-1;
+  }
+
+  .book-image {
+    margin: 0;
+    /* border: 2px solid orange; */
+    width: 60%;
+  }
+
+  .description {
+    margin: 0;
+    width: 100%;
+
+  }
+
+  .owner {
+
+    display: flex;
+    width: 100%;
+    grid-column: 2/-1;
+    justify-content: space-around;
+    /* padding: 2r; */
+  }
+.owner-img
+{
+  order: 22;
+}
+  .message {
+    grid-column: 2/-1;
+  }
+
+  .detail-category {
+    width: 100%;
+    height: 100%;
+    grid-row: 1/4;
+
   }
 }

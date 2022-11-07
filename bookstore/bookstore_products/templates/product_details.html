@@ -1,0 +1,377 @@
+{% extends 'shared/_mainLayout.html' %} {% load static %} {% block content %}
+<h1 class="heading"><span>Book Detail</span></h1>
+<!-- col-md-3 -->
+<container class="book-detail">
+  <div class="detail-category" id="">
+    <div class="list-group">
+        <button type="button" class="list-group-item list-group-item-action active bg-warning border-warning"
+            aria-current="true">
+            Category
+        </button>
+        <button type="button"
+            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+            All<span class="badge bg-info rounded-pill">14</span>
+        </button>
+        <button type="button"
+            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+            University<span class="badge bg-info rounded-pill">12</span>
+        </button>
+        <button type="button"
+            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+            History<span class="badge bg-info rounded-pill">9</span>
+        </button>
+        <button type="button"
+            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+            Politics<span class="badge bg-info rounded-pill">18</span>
+        </button>
+        <button type="button"
+            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+            pscychology<span class="badge bg-info rounded-pill">18</span>
+        </button>
+        <button type="button"
+            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+            philosophy<span class="badge bg-info rounded-pill">11</span>
+        </button>
+        <button type="button"
+            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+            Science<span class="badge bg-info rounded-pill">15</span>
+        </button>
+        <button type="button"
+            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+            Literature<span class="badge bg-info rounded-pill">17</span>
+        </button>
+        <button type="button"
+            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+            Other<span class="badge bg-info rounded-pill">28</span>
+        </button>
+        <button type="button"
+            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+            Other<span class="badge bg-info rounded-pill">28</span>
+        </button>
+        <button type="button"
+            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+            Other<span class="badge bg-info rounded-pill">28</span>
+        </button>
+        <button type="button"
+            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+            Other<span class="badge bg-info rounded-pill">28</span>
+        </button>
+        <button type="button"
+            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+            Other<span class="badge bg-info rounded-pill">28</span>
+        </button>
+        <button type="button"
+            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+            Other<span class="badge bg-info rounded-pill">28</span>
+        </button>
+        <button type="button"
+            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+            Other<span class="badge bg-info rounded-pill">28</span>
+        </button>
+        <button type="button"
+            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+            Other<span class="badge bg-info rounded-pill">28</span>
+        </button>
+        <button type="button"
+            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+            Other<span class="badge bg-info rounded-pill">28</span>
+        </button>
+        <button type="button"
+            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+            Other<span class="badge bg-info rounded-pill">28</span>
+        </button>
+        <button type="button"
+        class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+        pscychology<span class="badge bg-info rounded-pill">18</span>
+    </button>
+        <button type="button"
+        class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+        pscychology<span class="badge bg-info rounded-pill">18</span>
+    </button>
+        <button type="button"
+        class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+        pscychology<span class="badge bg-info rounded-pill">18</span>
+    </button>
+        <button type="button"
+        class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+        pscychology<span class="badge bg-info rounded-pill">18</span>
+    </button>
+        <button type="button"
+        class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+        pscychology<span class="badge bg-info rounded-pill">18</span>
+    </button>
+        <button type="button"
+        class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+        pscychology<span class="badge bg-info rounded-pill">18</span>
+    </button>
+ 
+
+    </div>
+</div>
+<!-- col-md-9 mb-3 mt-3 mt-md-0 -->
+  <div class="book-section  ">
+    <div class="book-image">
+      <img src="{% static 'images/book-10.png' %}" width="270px" alt="" />
+    </div>
+    <div class="description">
+      <table class="desc-table">
+        <tr>
+          <td class="desc-book-title" colspan="2">The alchemist</td>
+        </tr>
+        <tr>
+          <td>Author:</td>
+          <td>Paolo Coelho</td>
+        </tr>
+        <tr>
+          <td>publisher:</td>
+          <td>Gul Ahmad</td>
+        </tr>
+        <tr>
+          <td>price:</td>
+          <td><strong>220 </strong><span>AF</span></td>
+        </tr>
+        <tr>
+          <td>date:</td>
+          <td>12/10/2022</td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <h3>summary:</h3>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit,
+            aliquid fugit? Ipsum, repellat dignissimos incidunt sed culpa
+            placeat voluptatum. Tempora in expedita eos sunt tempore quo ex, qui
+            esse inventore!
+          </td>
+        </tr>
+      </table>
+      <button class="btn btn-warning my-3 text-white">Add to favorites</button>
+    </div>
+  </div>
+  <div class="owner description">
+    <div class="owner-img">
+      <img src="{% static 'images/pic-1.png' %}" alt="" />
+    </div>
+    <div class="owner-desc">
+      <table class="desc-table">
+        <tr>
+          <td class="desc-book-title" colspan="2">Seller</td>
+        </tr>
+        <tr>
+          <td>Name:</td>
+          <td>Ahmad saib</td>
+        </tr>
+        <tr>
+          <td>phone Num:</td>
+          <td>+93 744 260 004</td>
+        </tr>
+        <tr>
+          <td>Address:</td>
+          <td>Kart e Sakhi</td>
+        </tr>
+      </table>
+      <div class="owner-icons">
+        <a href="" class="text-secondary"
+          ><i class="fab fa-facebook-f text-warning"></i> Facebook</a
+        >
+        <a href="" class="text-secondary"
+          ><i class="fa-brands fa-whatsapp text-warning"></i> Whatsapp</a
+        >
+    </div>
+    </div>
+  </div>
+  <div class="message description">
+    <form action="">
+      <label for="">Name</label>
+      <input
+        type="text"
+        class="form-control mb-3 p-3"
+        placeholder="Enter your name"
+      />
+      <label for="">email/phone</label>
+      <input
+        type="text"
+        class="form-control mb-3 p-3"
+        placeholder="Enter your Email or phone number"
+      />
+      <label for="">Message</label>
+      <textarea
+        class="form-control mb-3 p-3"
+        placeholder="Enter your message"
+        rows="5"
+        cols="5"
+      ></textarea>
+      <button type="submit" class="btn btn-warning btn-block text-white">
+        Send message
+      </button>
+    </form>
+  </div>
+</container>
+<section class="featured" id="featured">
+  <h1 class="heading"><span>Featured Books</span></h1>
+  <div class="swiper container featured-slider">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide box">
+        <div class="icons">
+          <a href="" class="fas fa-search"></a>
+          <a href="" class="fas fa-heart"></a>
+          <a href="" class="fas fa-eye"></a>
+        </div>
+        <div class="image">
+          <img src="image/book-1.png" alt="" />
+        </div>
+        <div class="content">
+          <h3>Featured Books</h3>
+          <div class="price">200Af <span>150Af</span></div>
+          <a href="" class="btn btn-warning">contact to seller</a>
+        </div>
+      </div>
+
+      <div class="swiper-slide box">
+        <div class="icons">
+          <a href="" class="fas fa-search"></a>
+          <a href="" class="fas fa-heart"></a>
+          <a href="" class="fas fa-eye"></a>
+        </div>
+        <div class="image">
+          <img src="image/book-2.png" alt="" />
+        </div>
+        <div class="content">
+          <h3>featured books</h3>
+          <div class="price">200Af <span>150Af</span></div>
+          <a href="" class="btn btn-warning">contact to seller</a>
+        </div>
+      </div>
+
+      <div class="swiper-slide box">
+        <div class="icons">
+          <a href="" class="fas fa-search"></a>
+          <a href="" class="fas fa-heart"></a>
+          <a href="" class="fas fa-eye"></a>
+        </div>
+        <div class="image">
+          <img src="image/book-3.png" alt="" />
+        </div>
+        <div class="content">
+          <h3>featured books</h3>
+          <div class="price">200Af <span>150Af</span></div>
+          <a href="" class="btn btn-warning">contact to seller</a>
+        </div>
+      </div>
+
+      <div class="swiper-slide box">
+        <div class="icons">
+          <a href="" class="fas fa-search"></a>
+          <a href="" class="fas fa-heart"></a>
+          <a href="" class="fas fa-eye"></a>
+        </div>
+        <div class="image">
+          <img src="image/book-4.png" alt="" />
+        </div>
+        <div class="content">
+          <h3>featured books</h3>
+          <div class="price">200Af <span>150Af</span></div>
+          <a href="" class="btn btn-warning">contact to seller</a>
+        </div>
+      </div>
+
+      <div class="swiper-slide box">
+        <div class="icons">
+          <a href="" class="fas fa-search"></a>
+          <a href="" class="fas fa-heart"></a>
+          <a href="" class="fas fa-eye"></a>
+        </div>
+        <div class="image">
+          <img src="image/book-5.png" alt="" />
+        </div>
+        <div class="content">
+          <h3>featured books</h3>
+          <div class="price">200Af <span>150Af</span></div>
+          <a href="" class="btn btn-warning">contact to seller</a>
+        </div>
+      </div>
+
+      <div class="swiper-slide box">
+        <div class="icons">
+          <a href="" class="fas fa-search"></a>
+          <a href="" class="fas fa-heart"></a>
+          <a href="" class="fas fa-eye"></a>
+        </div>
+        <div class="image">
+          <img src="image/book-6.png" alt="" />
+        </div>
+        <div class="content">
+          <h3>featured books</h3>
+          <div class="price">200Af <span>150Af</span></div>
+          <a href="" class="btn btn-warning">contact to seller</a>
+        </div>
+      </div>
+
+      <div class="swiper-slide box">
+        <div class="icons">
+          <a href="" class="fas fa-search"></a>
+          <a href="" class="fas fa-heart"></a>
+          <a href="" class="fas fa-eye"></a>
+        </div>
+        <div class="image">
+          <img src="image/book-7.png" alt="" />
+        </div>
+        <div class="content">
+          <h3>featured books</h3>
+          <div class="price">200Af <span>150Af</span></div>
+          <a href="" class="btn btn-warning">contact to seller</a>
+        </div>
+      </div>
+
+      <div class="swiper-slide box">
+        <div class="icons">
+          <a href="" class="fas fa-search"></a>
+          <a href="" class="fas fa-heart"></a>
+          <a href="" class="fas fa-eye"></a>
+        </div>
+        <div class="image">
+          <img src="image/book-8.png" alt="" />
+        </div>
+        <div class="content">
+          <h3>featured books</h3>
+          <div class="price">200Af <span>150Af</span></div>
+          <a href="" class="btn btn-warning">contact to seller</a>
+        </div>
+      </div>
+
+      <div class="swiper-slide box">
+        <div class="icons">
+          <a href="" class="fas fa-search"></a>
+          <a href="" class="fas fa-heart"></a>
+          <a href="" class="fas fa-eye"></a>
+        </div>
+        <div class="image">
+          <img src="image/book-9.png" alt="" />
+        </div>
+        <div class="content">
+          <h3>featured books</h3>
+          <div class="price">200Af <span>150Af</span></div>
+          <a href="" class="btn btn-warning">contact to seller</a>
+        </div>
+      </div>
+
+      <div class="swiper-slide box">
+        <div class="icons">
+          <a href="" class="fas fa-search"></a>
+          <a href="" class="fas fa-heart"></a>
+          <a href="" class="fas fa-eye"></a>
+        </div>
+        <div class="image">
+          <img src="image/book-10.png" alt="" />
+        </div>
+        <div class="content">
+          <h3>featured books</h3>
+          <div class="price">200Af <span>150Af</span></div>
+          <a href="" class="btn btn-warning">contact to seller</a>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</section>
+{% endblock %}
