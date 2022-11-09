@@ -62,9 +62,9 @@
             </ul>
         </div>
         <div class="col-sm-12 col-lg-4 col-md-4">
-            <form class="d-flex" role="search">
+            <form action="/books/search" class="d-flex" role="search">
                 <input class="form-control border-rounded bg-light me-2" type="search" placeholder="Search"
-                    aria-label="Search" />
+                    aria-label="Search" value="{{ request.GET.q }}" name="q" />
                 <button class="btn btn-light border-rounded" type="submit">
                     <i class="fa-solid fa-search fa-lg"></i>
                 </button>

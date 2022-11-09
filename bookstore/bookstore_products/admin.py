@@ -1,12 +1,12 @@
 from django.contrib import admin
-from .models import product
+from .models import book
 # Register your models here.
 
 class productAdmin(admin.ModelAdmin):
     list_display = ['__str__', 'title', 'price','active']
 
     class Meta:
-        model = product
+        model = book
 
 
-admin.site.register(product, productAdmin)
+admin.site.register(book, productAdmin)

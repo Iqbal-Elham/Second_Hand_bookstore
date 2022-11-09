@@ -609,7 +609,7 @@ nav .btn-light:hover {
 
 .text1 {
   font-size: 13px;
-  color: #cbcbcb;
+  color: #555353;
 }
 
 .info {
@@ -731,10 +731,9 @@ nav .btn-light:hover {
 
 /* ----------------- books details ---------------------- */
 
-.detail-category
-{
+.detail-category {
   order: 22;
-  width: 90%;  
+  width: 90%;
 }
 
 .book-detail {
@@ -752,7 +751,9 @@ nav .btn-light:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  background-color: #fff;
+  border-radius: 2.5rem;
+  
 }
 
 .book-image {
@@ -760,7 +761,6 @@ nav .btn-light:hover {
   padding: 2.5rem;
   border-radius: 2.5rem;
   box-shadow: var(--box-shadow);
-  /* margin: 2rem 0; */
   width: 90%;
   display: flex;
   justify-content: center;
@@ -780,7 +780,7 @@ nav .btn-light:hover {
   padding: 2rem;
   border-radius: 2.5rem;
   width: 90%;
-  box-shadow: var(--box-shadow);
+  /* box-shadow: var(--box-shadow); */
 
 }
 
@@ -790,7 +790,7 @@ nav .btn-light:hover {
 }
 
 .desc-book-title {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 600;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
@@ -818,7 +818,7 @@ nav .btn-light:hover {
   gap: 0.4rem;
 }
 
-.description form button {
+.description button {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -839,7 +839,12 @@ nav .btn-light:hover {
     display: flex;
     flex-direction: row;
     gap: 2px;
+    width: 100%;
     grid-column: 2/-1;
+  }
+
+  .book-section table td {
+    padding: 0 2rem;
   }
 
   .book-image {
@@ -859,13 +864,18 @@ nav .btn-light:hover {
     display: flex;
     width: 100%;
     grid-column: 2/-1;
-    justify-content: space-around;
-    /* padding: 2r; */
+    justify-content: space-between;
+    padding: 2rem 6rem;
   }
-.owner-img
-{
-  order: 22;
-}
+
+  .owner table td {
+    padding: 0.7rem 5rem 0 0;
+  }
+
+  .owner-img {
+    order: 22;
+  }
+
   .message {
     grid-column: 2/-1;
   }

@@ -50,25 +50,26 @@
         <div class="row">
             {% for product in page_obj %}
             <div class="col-xl-3 col-lg-4 col-md-6">
-                <div class="card mt-3 mt-md-0">
-                    <div class="product-1 p-2 text-center">
-                        <img src="{{product.image.url}}" alt="" class="rounded" width="160" />
-                        <h4>{{ product.title }}</h4>
-                        <div class="mt-2 info">
-                            <span class="text1 d-block">{{ product.description }}</span>
-                            <span class="text1">{{product.publisher}}</span>
+                    <a href="{{ product.get_absolute_url }}">
+                    <div class="card my-3 mt-md-0">
+                        <div class="product-1 p-2 text-center">
+                            <img src="{{product.image.url}}" alt="" class="rounded" width="160" />
+                            <h4 class="text-black font-weight-bold">{{ product.title }}</h4>
+                            <div class="mt-2 info">
+                                <span class="text1 d-block">{{ product.description }}</span>
+                                <span class="text1">{{product.publisher}}</span>
+                            </div>
+                            <div class="cost mt-2">
+                                <span>{{product.price}} Af</span>
+                            </div>
                         </div>
-                        <div class="cost mt-2">
-                            <span>{{product.price}} Af</span>
-                        </div>
-                    </div>
-                    <a href="">
+
                         <div class="p-3 contact-seller-btn text-center text-white mt-2">
                             <span class="text-uppercase">Contact to Seller</span>
                         </div>
-                    </a>
+                    </div>
+                </a>
                 </div>
-            </div>
             {% endfor %}
         </div>
     </div>
@@ -84,17 +85,24 @@
                 <a class="page-link" href="?page={{ page_obj.previous_page_number }}">previous</a>
             </li>
             {% endif %}
+
             {% for page in paginator.page_range %}
+
             {% if page == page_obj.number %}
-            <li class="page-item active"><a style="color: #fff !important;" class="page-link" href="?page={{page}}">{{page}}</a></li>
+            <li class="page-item active">
+                <a style="color: #fff !important" class="page-link" href="?page={{page}}">{{page}}</a>
+            </li>
             {% else %}
-            <li class="page-item"><a class="page-link" href="?page={{page}}">{{page}}</a></li>
+            <li class="page-item">
+                <a class="page-link" href="?page={{page}}">{{page}}</a>
+            </li>
             {% endif %}
             {% endfor %}
             {% if page_obj.has_next %}
-                <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">next</a></li>
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.next_page_number }}">next</a>
+            </li>
             {% endif %}
-    
         </ul>
     </nav>
 </div>

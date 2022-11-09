@@ -111,36 +111,33 @@
 <!-- col-md-9 mb-3 mt-3 mt-md-0 -->
   <div class="book-section  ">
     <div class="book-image">
-      <img src="{% static 'images/book-10.png' %}" width="270px" alt="" />
+      <img src=" {{ books.image.url }} " width="270px" alt="" />
     </div>
     <div class="description">
       <table class="desc-table">
         <tr>
-          <td class="desc-book-title" colspan="2">The alchemist</td>
+          <td class="desc-book-title" colspan="2">{{ books.title }}</td>
         </tr>
         <tr>
           <td>Author:</td>
-          <td>Paolo Coelho</td>
+          <td>{{ books.Author }}</td>
         </tr>
         <tr>
           <td>publisher:</td>
-          <td>Gul Ahmad</td>
+          <td>{{ books.publisher }}</td>
         </tr>
         <tr>
           <td>price:</td>
-          <td><strong>220 </strong><span>AF</span></td>
+          <td><strong>{{ books.price }} </strong><span>AF</span></td>
         </tr>
         <tr>
           <td>date:</td>
-          <td>12/10/2022</td>
+          <td>{{ books.Date }}</td>
         </tr>
         <tr>
           <td colspan="2">
-            <h3>summary:</h3>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit,
-            aliquid fugit? Ipsum, repellat dignissimos incidunt sed culpa
-            placeat voluptatum. Tempora in expedita eos sunt tempore quo ex, qui
-            esse inventore!
+            <h3>Description:</h3>
+            {{ books.description }}
           </td>
         </tr>
       </table>
@@ -154,7 +151,7 @@
     <div class="owner-desc">
       <table class="desc-table">
         <tr>
-          <td class="desc-book-title" colspan="2">Seller</td>
+          <td class="desc-book-title" colspan="2">Seller specifications</td>
         </tr>
         <tr>
           <td>Name:</td>
