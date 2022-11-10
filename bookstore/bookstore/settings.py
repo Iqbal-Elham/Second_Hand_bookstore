@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_render_partial',
     'bookstore_account',
-    'bookstore_products'
+    'bookstore_products',
+    'bookstore_category'
 ]
 
 MIDDLEWARE = [

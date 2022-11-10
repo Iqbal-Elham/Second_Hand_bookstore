@@ -1,49 +1,11 @@
 {% extends 'shared/_mainLayout.html' %} {% load static %} {% block content %}
+{% load render_partial %}
+
+
 <div class="row container-fluid mx-auto">
-    <div class="header mt-4">Buy Book</div>
+    <h1 class="heading mb-4"><span>Buy Books</span></h1>
     <div class="col-md-3" id="category">
-        <div class="list-group">
-            <button type="button" class="list-group-item list-group-item-action active bg-warning border-warning"
-                aria-current="true">
-                Category
-            </button>
-            <button type="button"
-                class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                All<span class="badge bg-info rounded-pill">14</span>
-            </button>
-            <button type="button"
-                class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                University<span class="badge bg-info rounded-pill">12</span>
-            </button>
-            <button type="button"
-                class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                History<span class="badge bg-info rounded-pill">9</span>
-            </button>
-            <button type="button"
-                class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                Politics<span class="badge bg-info rounded-pill">18</span>
-            </button>
-            <button type="button"
-                class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                pscychology<span class="badge bg-info rounded-pill">18</span>
-            </button>
-            <button type="button"
-                class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                philosophy<span class="badge bg-info rounded-pill">11</span>
-            </button>
-            <button type="button"
-                class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                Science<span class="badge bg-info rounded-pill">15</span>
-            </button>
-            <button type="button"
-                class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                Literature<span class="badge bg-info rounded-pill">17</span>
-            </button>
-            <button type="button"
-                class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                Other<span class="badge bg-info rounded-pill">28</span>
-            </button>
-        </div>
+        {% render_partial 'category_partial' %}
     </div>
 
     <div class="col-md-9 container mb-3 mt-3 mt-md-0">
