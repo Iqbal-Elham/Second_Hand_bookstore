@@ -44,3 +44,23 @@ def register(request):
     }
     return render(request, 'account/register.html',context)
 
+
+
+def login_wave(request):
+    form = login_form(request.POST or None)
+    
+    if form.is_valid():
+        username = form.cleaned_data.get("user_name")
+        password = form.cleaned_data.get("password")
+        user = authenticate(request, username = username, password = password)
+        if user is not None:
+            login(request, user)
+        else:
+            form.add_error("user_name", "Username not Found")
+    context = {
+        "loginForm" : form 
+    }
+    if request.user.is_authenticated:
+        return redirect("/")
+        
+    return render(request, 'account/login_wave.html',context)
