@@ -45,22 +45,34 @@
                 <h1 class="text-center mb-3">How can we help you?</h1>
             </div>
 
-            <form action="" class="d-r">
+            <form action="" method="post">
+                {% csrf_token %}
                 <div class="row">
                     <div class="form-group col-md-6">
                         <label for="fullname">Full name</label>
-                        <input type="text" class="form-control" id="fullname" placeholder="Full name">
+                        {{ contactForm.full_name }}
+                        {% for error in contactForm.full_name.errors %}
+                            <p class="danger">{{ error }}</p>
+                        {% endfor %}
                     </div>
                     <div class="form-group col-md-6">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control mb-2" id="email" placeholder="Email">
+                        {{ contactForm.email }}
+                        {% for error in contactForm.email.errors %}
+                        <p class="danger">{{ error }}</p>
+                    {% endfor %}
                     </div>
                 </div>
                 <label for="inputSubject">Subject</label>
-                <input type="text" class="form-control mb-2" id="inputSubject" placeholder="Subject">
+                {{ contactForm.subject }}
+                {% for error in contactForm.subject.errors %}
+                <p class="danger">{{ error }}</p>
+            {% endfor %}
                 <label for="inputMessage">Message</label>
-                <textarea type="text" class="form-control" id="inputMessage" placeholder="Message" rows="6">
-                </textarea>
+               {{ contactForm.message }}
+               {% for error in contactForm.message.errors %}
+               <p class="danger">{{ error }}</p>
+           {% endfor %}
                 <button type="submit" class="btn btn-warning w-50 btn-block mt-3 text-white d-block mx-auto"><span
                         class="h4">Send</span></button>
             </form>
