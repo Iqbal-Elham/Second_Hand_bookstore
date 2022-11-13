@@ -1,3 +1,4 @@
+import itertools
 from django.shortcuts import render
 from django.views.generic import ListView
 
@@ -21,7 +22,7 @@ class books_by_category(ListView):
 
     def get_queryset(self):
         category_name = self.kwargs['category_title']
-        book_category = bookCategory.objects.filter(title__iexact = category_name).first()
+        book_category = bookCategory.objects.filter(title__iexact=category_name).first()
 
         if book_category is None:
             raise Http404("Page not Found")
@@ -29,17 +30,30 @@ class books_by_category(ListView):
         return book.objects.get_by_category(category_name)
 
 
+def my_grouper(n, iterable):
+    args = [iter(iterable)] * n
+    return ([e for e in t if e is not None] for t in itertools.zip_longest(*args))
+
+
 def bookDetails(request, *args, **kwargs):
     book_id = kwargs['bookId']
 
     books = book.objects.get_by_id(book_id)
+    print(books)
 
-    if books is not None and books.active:
-        context = {
-            'books': books
-        }
-        return render(request, './book_details.html', context)
-    raise Http404
+    if books is None or not books.active:
+        raise Http404
+
+    related_books = book.objects.get_queryset().filter(category__book=books).distinct()
+    print(related_books)
+    grouped_related_books = my_grouper(4, related_books)
+    grouped_related_books = list(grouped_related_books)
+    print(grouped_related_books)
+    context = {
+        'books': books,
+        'related_books': grouped_related_books,
+    }
+    return render(request, './book_details.html', context)
 
 
 class searchBookView(ListView):
