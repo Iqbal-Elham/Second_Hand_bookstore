@@ -1,12 +1,12 @@
 {% load static %}
 <!-- ------------------------------navbar 1--------------------------- -->
-<nav id="nav1" class="navbar navbar-expand-lg bg-dark pt-3 px-lg-5">
+<nav id="nav1" class="navbar navbar-expand-lg bg-dark pt-2 px-lg-5">
     <div class="container-fluid d-flex justify-content-center  justify-content-md-between">
-        <a href="" class="navbar-brand d-flex align-items-center justify-content-center">
+        <a href="" class="navbar-brand d-flex align-items-center justify-content-center ">
             <lord-icon src="https://cdn.lordicon.com/qvbrkejx.json" trigger="morph" colors="primary:#ffffff"
-                style="width:45px;height:45px;">
+                style="width:35px;height:35px;">
             </lord-icon>
-            <div class="h2 text-white">THE BOOK BAZAAR</div>
+            <div class="h2 text-white m-2">THE BOOK BAZAAR</div>
         </a>
         <div id="nav1-icons">
             <button type="button" class="btn text-light position-relative">
@@ -35,9 +35,9 @@
                 <i class="fa-solid fa-search"></i>
             </button>
             <div id="search-form">
-                <form class="d-flex" role="search">
+                <form action="/books/search" class="d-flex" role="search">
                     <input class="form-control border-rounded bg-light me-2" type="search" placeholder="Search"
-                        aria-label="Search" />
+                        aria-label="Search" value="{{ request.GET.q }}" name="q" />
                     <button class="btn btn-light border-rounded" type="submit">
                         <i class="fa-solid fa-search fa-lg"></i>
                     </button>
@@ -61,7 +61,7 @@
                     <a href="#" class="nav-link text-light">Sell Books</a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link text-light">Contact us</a>
+                    <a href="/contact-us" class="nav-link text-light">Contact us</a>
                 </li>
             </ul>
         </div>
@@ -79,15 +79,15 @@
 <!-- ------------bottom navbar------------- -->
 <nav class="nav d-flex justify-content-center" id="bottom-navbar">
     <li class="nav-item">
-        <a href="index.html" class="nav-link text-light"><i class="fa-solid fa-home fa-xl"></i></a>
+        <a href="/" class="nav-link text-light"><i class="fa-solid fa-home fa-xl"></i></a>
     </li>
     <li class="nav-item">
-        <a href="buy-book.html" class="nav-link text-light"><i class="fa-solid fa-book fa-xl"></i></a>
+        <a href="/books" class="nav-link text-light"><i class="fa-solid fa-book fa-xl"></i></a>
     </li>
     <li class="nav-item">
         <a href="sell-book.html" class="nav-link text-light"><i class="fa-solid fa-address-card fa-xl"></i></a>
     </li>
     <li class="nav-item">
-        <a href="" class="nav-link text-light"><i class="fa-solid fa-phone fa-xl"></i></a>
+        <a href="/contac-us" class="nav-link text-light"><i class="fa-solid fa-phone fa-xl"></i></a>
     </li>
 </nav>

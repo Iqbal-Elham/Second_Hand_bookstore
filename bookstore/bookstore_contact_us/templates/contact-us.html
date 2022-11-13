@@ -1,0 +1,71 @@
+{% extends 'shared/_mainLayout.html' %}
+{% load static %}
+{% block content %}
+<h1 class="heading"><span>Location</span></h1>
+<div class="d-flex justify-content-center m-sm-4">
+    <img src="{% static 'images/map.jpg' %}" class="img-fluid border border-warning border-rounded" alt="">
+</div>
+<h2 class="heading "><span>Let's Start a Conversation</span></h2>
+
+<div class="">
+    <div class="row mx-2 mx-md-5 bg-white border-rounded p-4 my-4">
+        <div class="col-md-5">
+            <div class="d-flex justify-content-center mb-4">
+                <lord-icon src="https://cdn.lordicon.com/oaflahpk.json" trigger="loop" delay="2000"
+                    colors="primary:#e8b730" style="width:50px;height:50px">
+                </lord-icon>
+                <h1 class="text-center">Contact Us</h1>
+            </div>
+            <p class="h5 mb-4">Have an enquiry? or any project details to discuss? Just leave your details below, we
+                will whistle back
+                shortly. </p>
+            <h4>Address: <span class="h5 mb-4">Kart e Sakhi, Kabul, Afghanistan</span></h4>
+            <h4>phone: <span class="h5 mb-4">+93 765 181 256</span></h4>
+            <h4>Whatsapp: <span class="h5 mb-4">+93 744 260 004</span></h4>
+            <h4>Email: <span class="h5 mb-4">iqbal.elham7@gmail.com</span></h4>
+            <div class="d-flex justify-content-center gap-2 mt-3">
+                <lord-icon src="https://cdn.lordicon.com/uvqnvwbl.json" trigger="loop" delay="2000"
+                    colors="primary:#e8b730" style="width:32px;height:32px">
+                </lord-icon>
+                <h2 class="text-center">Social Links</h2>
+            </div>
+            <div class="text-center mt-3">
+                <a href=""><i class="text-dark h2 mx-2 fa-brands fa-facebook"></i></a>
+                <a href=""><i class="text-dark h2 mx-2 fa-brands fa-instagram"></i></a>
+                <a href=""><i class="text-dark h2 mx-2 fa-brands fa-linkedin"></i></a>
+                <a href=""><i class="text-dark h2 mx-2 fa-brands fa-github"></i></a>
+            </div>
+
+        </div>
+        <div class="col-md-7">
+            <div class="d-flex justify-content-center mb-3">
+                <lord-icon src="https://cdn.lordicon.com/pkmkagva.json" trigger="loop" delay="2000"
+                    colors="primary:#e8b730" style="width:45px;height:45px">
+                </lord-icon>
+                <h1 class="text-center mb-3">How can we help you?</h1>
+            </div>
+
+            <form action="" class="d-r">
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="fullname">Full name</label>
+                        <input type="text" class="form-control" id="fullname" placeholder="Full name">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control mb-2" id="email" placeholder="Email">
+                    </div>
+                </div>
+                <label for="inputSubject">Subject</label>
+                <input type="text" class="form-control mb-2" id="inputSubject" placeholder="Subject">
+                <label for="inputMessage">Message</label>
+                <textarea type="text" class="form-control" id="inputMessage" placeholder="Message" rows="6">
+                </textarea>
+                <button type="submit" class="btn btn-warning w-50 btn-block mt-3 text-white d-block mx-auto"><span
+                        class="h4">Send</span></button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

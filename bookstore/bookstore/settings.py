@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django_render_partial',
     'bookstore_account',
     'bookstore_products',
-    'bookstore_category'
+    'bookstore_category',
+    'bookstore_contact_us'
 ]
 
 MIDDLEWARE = [
