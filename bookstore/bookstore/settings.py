@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'bookstore_account',
     'bookstore_products',
     'bookstore_category',
-    'bookstore_contact_us'
+    'bookstore_contact_us',
+    'bookstore_wishlist'
 ]
 
 MIDDLEWARE = [

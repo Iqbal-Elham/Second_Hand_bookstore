@@ -24,6 +24,7 @@ urlpatterns = [
     path('',include('bookstore_account.urls')),
     path('',include('bookstore_products.urls')),
     path('',include('bookstore_contact_us.urls')),
+    path('',include('bookstore_wishlist.urls')),
     path('footer',footer,name='footer'),
     path('admin/', admin.site.urls),
 ]

@@ -1,5 +1,5 @@
 :root {
-  --color: rgb(240, 200, 8);
+  --color: #f0c808;
   --color-btn: #b19610;
   --black: #444;
   --border: 0.1rem solid rgba(0, 0, 0, 0.1);
@@ -886,4 +886,25 @@ nav .btn-light:hover {
     grid-row: 1/4;
 
   }
+}
+
+.table-contain
+{
+  margin: 1rem;
+}
+.table-contain table
+{
+
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.table-pic 
+{
+  width: 130px;
+}
+@media (min-width: 768px) {
+.table-contain
+{
+  margin: 4rem 4rem;
+}
 }

@@ -1,0 +1,80 @@
+{% extends "shared/_mainLayout.html" %}
+{% load static %}
+
+{% block content %}
+
+<body class="bg-white">
+
+    <header class="wishlist-header d-flex flex-column justify-content-center align-items-center mt-5">
+        <p>Home/wishlist</p>
+        <lord-icon src="https://cdn.lordicon.com/ytuosppc.json" trigger="loop" delay="1500"
+            colors="primary:#f0c808,secondary:#545454" style="width:200px;height:200px">
+        </lord-icon>
+        <h1 class="display-4">My WishList</h1>
+    </header>
+    <div class="table-contain">
+
+        <table class="table table-striped wishlist-table">
+            <thead>
+                <tr class="text-center">
+                    <th scope="col">#</th>
+                    <th scope="col" class="table-pic">p</th>
+                    <th scope="col">Book Name</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Publisher</th>
+                    <th scope="col">detail</th>
+                    <th scope="col">delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="text-center align-middle">
+                    <th scope="row">1</th>
+                    <td><img src="{% static './images/book-1.png' %}" class="img-fluid" width="100px" height="100px"
+                            alt=""></td>
+                    <td>The Alchemist</td>
+                    <td>Paulo Coelho</td>
+                    <td>Paulo Coelho</td>
+                    <td><button class="w-75 btn btn-warning text-white btn-block rounded-5">More Details</button></td>
+                    <td>
+                        <lord-icon src="https://cdn.lordicon.com/qjwkduhc.json" trigger="loop-on-hover" delay="300"
+                            colors="primary:#646e78,secondary:#545454,tertiary:#e8b730" style="width:70px;height:70px">
+                        </lord-icon>
+                    </td>
+                </tr>
+                <tr class="text-center align-middle">
+                    <th scope="row">1</th>
+                    <td><img src="{% static './images/book-1.png' %}" class="img-fluid" width="100px" height="100px"
+                            alt=""></td>
+                    <td>The Alchemist</td>
+                    <td>Paulo Coelho</td>
+                    <td>Paulo Coelho</td>
+                    <td><button class="w-75 btn btn-warning text-white btn-block rounded-5">More Details</button></td>
+                    <td>
+                        <lord-icon src="https://cdn.lordicon.com/qjwkduhc.json" trigger="loop-on-hover" delay="300"
+                            colors="primary:#646e78,secondary:#545454,tertiary:#e8b730" style="width:70px;height:70px">
+                        </lord-icon>
+                    </td>
+                </tr>
+                <tr class="text-center align-middle">
+                    <th scope="row">1</th>
+                    <td><img src="{% static './images/book-1.png' %}" class="img-fluid" width="100px" height="100px"
+                            alt=""></td>
+                    <td>The Alchemist</td>
+                    <td>Paulo Coelho</td>
+                    <td>Paulo Coelho</td>
+                    <td><button class="w-75 btn btn-warning text-white btn-block rounded-5">More Details</button></td>
+                    <td>
+                        <lord-icon src="https://cdn.lordicon.com/qjwkduhc.json" trigger="loop-on-hover" delay="300"
+                            colors="primary:#646e78,secondary:#545454,tertiary:#e8b730" style="width:70px;height:70px">
+                        </lord-icon>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+
+
+{% endblock %}

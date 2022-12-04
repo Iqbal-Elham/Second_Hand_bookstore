@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import login, authenticate, get_user_model
+from django.contrib.auth import login, authenticate, get_user_model, logout
 from django.contrib.auth.models import User
 from .forms import login_form, register_form
 
@@ -64,3 +64,8 @@ def login_wave(request):
         return redirect("/")
         
     return render(request, 'account/login_wave.html',context)
+
+
+def log_out(request):
+    logout(request)
+    return redirect("/")

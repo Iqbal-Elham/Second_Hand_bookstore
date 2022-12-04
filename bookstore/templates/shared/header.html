@@ -9,12 +9,12 @@
             <div class="h2 text-white m-2">THE BOOK BAZAAR</div>
         </a>
         <div id="nav1-icons">
-            <button type="button" class="btn text-light position-relative">
+            <!-- <button type="button" class="btn text-light position-relative">
                 <i class="fa-solid fa-cart-shopping"> My Cart</i>
                 <span class="position-absolute top-0 start-100 translate-middle badge bg-warning">5</span>
-            </button>
+            </button> -->
             <button type="button" class="btn text-light position-relative">
-                <i class="fa-solid fa-heart"> Wish list</i>
+               <a href="/wishlist"> <i class="fa-solid fa-heart"> Wish list</i></a>
                 <span class="position-absolute top-0 start-100 translate-middle badge bg-warning">2</span>
             </button>
 
@@ -24,10 +24,10 @@
             </button>
             {% else %}
             <button type="button" class="btn text-light position-relative">
-                <i class="fa-solid fa-user"> Profile</i>
+                <a href="/admin"><i class="fa-solid fa-user"> Profile</i></a>
             </button>
             <button type="button" class="btn text-light position-relative" id="login-btn">
-                <a href="/admin/logout"><i class="fa-solid fa-lock"> Logout</i></a>
+                <a href="/logout"><i class="fa-solid fa-lock"> Logout</i></a>
             </button>
             {% endif %}
 
