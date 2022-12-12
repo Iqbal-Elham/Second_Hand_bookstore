@@ -150,17 +150,26 @@ nav .btn-light:hover {
   background: var(--color-btn);
 }
 
-.slide1 {
+.slide5 {
   background: linear-gradient(#070e3d10, #070e3d10), url(../../images/blog-1.jpg);
 }
 
 .slide2 {
   background: linear-gradient(#070e3d10, #070e3d10),
-    url(../../images/library1.jpg);
+    url(../../images/s9.jpg);
 }
 
 .slide3 {
-  background: linear-gradient(#070e3d10, #070e3d10), url(../../images/blog-3.jpg);
+  background: linear-gradient(#070e3d10, #070e3d10), url(../../images/s7.jpg);
+}
+.slide4 {
+  background: linear-gradient(#070e3d10, #070e3d10), url(../../images/s1.jpg);
+}
+.slide1 {
+  background: linear-gradient(#070e3d10, #070e3d10), url(../../images/s4.jpg);
+}
+.slide6 {
+  background: linear-gradient(#070e3d10, #070e3d10), url(../../images/s19.jpg);
 }
 
 .bg-cover {
@@ -892,12 +901,7 @@ nav .btn-light:hover {
 {
   margin: 1rem;
 }
-.table-contain table
-{
 
-    border-collapse: collapse;
-    border-spacing: 0;
-}
 .table-pic 
 {
   width: 130px;

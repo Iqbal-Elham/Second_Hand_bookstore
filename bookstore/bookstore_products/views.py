@@ -3,7 +3,8 @@ from django.shortcuts import render
 from django.views.generic import ListView
 
 from bookstore_category.models import bookCategory
-from .models import book
+from bookstore_wishlist.forms import userWishlistForm
+from .models import Book
 from django.http import Http404
 # Create your views here.
 
@@ -13,7 +14,7 @@ class bookList(ListView):
     paginate_by = 6
 
     def get_queryset(self):
-        return book.objects.get_active_products()
+        return Book.objects.get_active_products()
 
 
 class books_by_category(ListView):
@@ -27,7 +28,7 @@ class books_by_category(ListView):
         if book_category is None:
             raise Http404("Page not Found")
 
-        return book.objects.get_by_category(category_name)
+        return Book.objects.get_by_category(category_name)
 
 
 def my_grouper(n, iterable):
@@ -36,22 +37,25 @@ def my_grouper(n, iterable):
 
 
 def bookDetails(request, *args, **kwargs):
-    book_id = kwargs['bookId']
 
-    books = book.objects.get_by_id(book_id)
-    print(books)
+    book_id = kwargs['bookId']
+    new_wish_form = userWishlistForm(request.POST or None, initial={'book_id': book_id})
+
+    books = Book.objects.get_by_id(book_id)
 
     if books is None or not books.active:
         raise Http404
 
-    related_books = book.objects.get_queryset().filter(category__book=books).distinct()
-    print(related_books)
+    books.visit_count += 1
+    books.save()
+
+    related_books = Book.objects.get_queryset().filter(category__book=books).distinct()
     grouped_related_books = my_grouper(4, related_books)
     grouped_related_books = list(grouped_related_books)
-    print(grouped_related_books)
     context = {
         'books': books,
         'related_books': grouped_related_books,
+        'wish_form' :new_wish_form,
     }
     return render(request, './book_details.html', context)
 
@@ -65,9 +69,9 @@ class searchBookView(ListView):
         request = self.request
         query = request.GET.get('q')
         if query is None:
-            return book.objects.get_active_products()
+            return Book.objects.get_active_products()
 
-        return book.objects.search(query)
+        return Book.objects.search(query)
 
 
 def category_partial(request):

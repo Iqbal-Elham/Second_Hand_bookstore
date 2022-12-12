@@ -1,6 +1,4 @@
 searchForm = document.querySelector('#search-form');
-
-
 document.querySelector('#search-btn').onclick = () => {
     searchForm.classList.toggle('active');
 }
@@ -13,20 +11,20 @@ $(window).on("load", function () {
 
 
 
+// book-slider
 $(document).ready(function () {
-    // book-slider
 
     $('#hero-slider').owlCarousel({
         loop: true,
         margin: 0,
         nav: true,
         items: 1,
-        smartSpeed: 1000,
+        smartSpeed: 2000,
         dots: false,
         navText: ['<', '>'],
         autoplay:
         {
-            delay: 4000,
+            delay: 6000,
             disableOnInteraction: false,
         },
         responsive: {

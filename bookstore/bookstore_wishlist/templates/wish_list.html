@@ -3,77 +3,63 @@
 
 {% block content %}
 
-<body class="bg-white">
+<div class="bg-white p-2 m-4 rounded-5">
 
     <header class="wishlist-header d-flex flex-column justify-content-center align-items-center mt-5">
-        <p>Home/wishlist</p>
+    <div>
+        <a class="text-dark" href="/">Home </a>/
+        <a class="text-warning active" href="/wishlist">Wishlist</a>
+    </div>
         <lord-icon src="https://cdn.lordicon.com/ytuosppc.json" trigger="loop" delay="1500"
-            colors="primary:#f0c808,secondary:#545454" style="width:200px;height:200px">
+            colors="primary:#f0c808,secondary:#545454" style="width:1500px;height:150px">
         </lord-icon>
         <h1 class="display-4">My WishList</h1>
     </header>
     <div class="table-contain">
-
+        {% if wish != None and details|length > 0 %}  
+        <div class="border-top border-5 border-rounded">
         <table class="table table-striped wishlist-table">
             <thead>
                 <tr class="text-center">
                     <th scope="col">#</th>
-                    <th scope="col" class="table-pic">p</th>
+                    <th scope="col" class="table-pic"></th>
                     <th scope="col">Book Name</th>
                     <th scope="col">Author</th>
                     <th scope="col">Publisher</th>
-                    <th scope="col">detail</th>
-                    <th scope="col">delete</th>
+                    <th scope="col">Price</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
+                {% for detail in details %}
                 <tr class="text-center align-middle">
-                    <th scope="row">1</th>
-                    <td><img src="{% static './images/book-1.png' %}" class="img-fluid" width="100px" height="100px"
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td><img src="{{ detail.wishBook.image.url }}" class="img-fluid" width="100px" height="100px"
                             alt=""></td>
-                    <td>The Alchemist</td>
-                    <td>Paulo Coelho</td>
-                    <td>Paulo Coelho</td>
-                    <td><button class="w-75 btn btn-warning text-white btn-block rounded-5">More Details</button></td>
+                    <td>{{ detail.wishBook.title }}</td>
+                    <td>{{ detail.wishBook.Author }}</td>
+                    <td>{{ detail.wishBook.publisher }}</td>
+                    <td>{{ detail.wishBook.price }} Af</td>
+                    <td><a href="{{ detail.wishBook.get_absolute_url }}"><button class="w-75 btn btn-warning text-white btn-block rounded-5">More Details</button></a></td>
                     <td>
-                        <lord-icon src="https://cdn.lordicon.com/qjwkduhc.json" trigger="loop-on-hover" delay="300"
-                            colors="primary:#646e78,secondary:#545454,tertiary:#e8b730" style="width:70px;height:70px">
-                        </lord-icon>
+                    <a href="/remove-wishlist-item/{{ detail.id }}"> <lord-icon src="https://cdn.lordicon.com/qjwkduhc.json" trigger="loop-on-hover" delay="300"
+                        colors="primary:#646e78,secondary:#545454,tertiary:#e8b730" style="width:70px;height:70px">
+                    </lord-icon></a>
                     </td>
                 </tr>
-                <tr class="text-center align-middle">
-                    <th scope="row">1</th>
-                    <td><img src="{% static './images/book-1.png' %}" class="img-fluid" width="100px" height="100px"
-                            alt=""></td>
-                    <td>The Alchemist</td>
-                    <td>Paulo Coelho</td>
-                    <td>Paulo Coelho</td>
-                    <td><button class="w-75 btn btn-warning text-white btn-block rounded-5">More Details</button></td>
-                    <td>
-                        <lord-icon src="https://cdn.lordicon.com/qjwkduhc.json" trigger="loop-on-hover" delay="300"
-                            colors="primary:#646e78,secondary:#545454,tertiary:#e8b730" style="width:70px;height:70px">
-                        </lord-icon>
-                    </td>
-                </tr>
-                <tr class="text-center align-middle">
-                    <th scope="row">1</th>
-                    <td><img src="{% static './images/book-1.png' %}" class="img-fluid" width="100px" height="100px"
-                            alt=""></td>
-                    <td>The Alchemist</td>
-                    <td>Paulo Coelho</td>
-                    <td>Paulo Coelho</td>
-                    <td><button class="w-75 btn btn-warning text-white btn-block rounded-5">More Details</button></td>
-                    <td>
-                        <lord-icon src="https://cdn.lordicon.com/qjwkduhc.json" trigger="loop-on-hover" delay="300"
-                            colors="primary:#646e78,secondary:#545454,tertiary:#e8b730" style="width:70px;height:70px">
-                        </lord-icon>
-                    </td>
-                </tr>
+                {% endfor %}
             </tbody>
         </table>
+        {% else %}
+        <div class="alert alert-warning">
+            <p>Your Wish List Is Empty</p>
+        </div>
+        {% endif %}
+        </div>
     </div>
 
-</body>
+</div>
 
 
 

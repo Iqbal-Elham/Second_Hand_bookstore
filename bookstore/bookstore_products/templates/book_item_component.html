@@ -2,7 +2,7 @@
     <div class="icons">
       <a href="" class="fas fa-search"></a>
       <a href="" class="fas fa-heart"></a>
-      <a href="" class="fas fa-eye"></a>
+      <a href="{{ books.get_absolute_url }}" class="fas fa-eye"></a>
     </div>
     <div class="image">
       <img src="{{ books.image.url }}" alt="" />
@@ -10,6 +10,6 @@
     <div class="content">
       <h3>{{ books.title }}</h3>
       <div class="price">{{ books.price }} <span>150Af</span></div>
-      <a href="" class="btn btn-warning">contact to seller</a>
+      <a href="{{ books.get_absolute_url }}" class="btn btn-warning">contact to seller</a>
     </div>
   </div>

@@ -136,12 +136,12 @@ p {
     /* box-shadow: var(--box-shadow); */
     /* border-radius: 0.9rem; */
     margin: 5rem;
-    /* backdrop-filter: blur(2px); */
+    backdrop-filter: blur(1px);
     border-radius: 32px;
     /* background-color: rgba(255, 255, 255, 0.8); */
-    box-shadow: 35px 35px 68px 0px rgba(240, 200, 8, 0.5),
-      inset -2px -2px 16px 0px rgba(240, 200, 8, 0.6),
-      inset 0px 11px 28px 0px black;
+    box-shadow: 15px 15px 28px 0px rgba(31, 30, 30, 0.116),
+      inset -2px -2px 16px 0px rgba(31, 31, 30, 0.212),
+      inset 0px 7px 12px 0px rgba(255, 255, 255, 0.555);
   }
   
   .login-form-container form h3 {
@@ -227,7 +227,7 @@ p {
   
   .sub-btn:hover {
     background: rgb(202, 79, 22);
-    align-items: ;
+    align-items: center;
 }
 
   @media (max-width: 768px) {

@@ -160,7 +160,16 @@ nav .btn-light:hover {
 }
 
 .slide3 {
-  background: linear-gradient(#070e3d10, #070e3d10), url(../../images/blog-3.jpg);
+  background: linear-gradient(#070e3d10, #070e3d10), url(../../images/s1.jpg);
+}
+.slide4 {
+  background: linear-gradient(#070e3d10, #070e3d10), url(../../images/s4.jpg);
+}
+.slide5 {
+  background: linear-gradient(#070e3d10, #070e3d10), url(../../images/s7.jpg);
+}
+.slide6 {
+  background: linear-gradient(#070e3d10, #070e3d10), url(../../images/s19.jpg);
 }
 
 .bg-cover {
@@ -243,12 +252,12 @@ nav .btn-light:hover {
   z-index: 10000;
   height: 100%;
   width: 100%;
-  background: rgba(60, 56, 34, 0.25);
+  /* background: rgba(60, 56, 34, 0.25);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(44px);
-  -webkit-backdrop-filter: blur(44px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.822);
+  -webkit-backdrop-filter: blur(44px); */
+  /* border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.822); */
 }
 
 /* .login-form-container.active {
@@ -264,8 +273,8 @@ nav .btn-light:hover {
   /* border-radius: 0.9rem; */
   margin: 5rem;
   backdrop-filter: blur(4px);
-  background-color: rgba(255, 255, 255, 0.8);
   border-radius: 32px;
+  /* background-color: rgba(255, 255, 255, 0.8); */
   box-shadow: 35px 35px 68px 0px rgba(240, 200, 8, 0.5),
     inset -2px -2px 16px 0px rgba(240, 200, 8, 0.6),
     inset 0px 11px 28px 0px rgb(255, 255, 255);
@@ -886,4 +895,20 @@ nav .btn-light:hover {
     grid-row: 1/4;
 
   }
+}
+
+.table-contain
+{
+  margin: 1rem;
+}
+
+.table-pic 
+{
+  width: 130px;
+}
+@media (min-width: 768px) {
+.table-contain
+{
+  margin: 4rem 4rem;
+}
 }

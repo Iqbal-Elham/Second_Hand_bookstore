@@ -42,7 +42,11 @@
           </td>
         </tr>
       </table>
-      <button class="btn btn-warning my-3 text-white">Add to favorites</button>
+      <form method="post" action="/user-wishlist">
+        {% csrf_token %}
+        {{ wish_form.book_id }}
+        <button type="submit" class="btn btn-warning my-3 text-white">Add to favorites</button>
+      </form>
     </div>
   </div>
   <div class="owner description">

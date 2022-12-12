@@ -5,7 +5,7 @@
 
 <!-- ------------------pics slider -------------------------------- -->
 
-<div class="slide-wrapper owl-carousel owl-theme" id="hero-slider">
+<div class="slide-wrapper owl-carousel owl-theme bg-slider" id="hero-slider">
   <div class="slide2 min-vh-100 bg-cover d-flex align-items-center">
     <div class="container">
       <div class="row">
@@ -54,171 +54,83 @@
       </div>
     </div>
   </div>
+  <div class="slide4 min-vh-100 bg-cover d-flex align-items-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="text-uppercase text-white display-5" id="slide-font">
+            work smart
+          </h1>
+          <h1 class="text-uppercase my-3 text-white display-1" id="slide-font">
+            study hard
+          </h1>
+          <a href="#" class="btn btn-brand">Get Started</a>
+          <a href="#" class="btn btn-outline-light ms-md-3">Our Works</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide5 min-vh-100 bg-cover d-flex align-items-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="text-uppercase text-white display-5" id="slide-font">
+            work smart
+          </h1>
+          <h1 class="text-uppercase my-3 text-white display-1" id="slide-font">
+            study hard
+          </h1>
+          <a href="#" class="btn btn-brand">Get Started</a>
+          <a href="#" class="btn btn-outline-light ms-md-3">Our Works</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide6 min-vh-100 bg-cover d-flex align-items-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="text-uppercase text-white display-5" id="slide-font">
+            work smart
+          </h1>
+          <h1 class="text-uppercase my-3 text-white display-1" id="slide-font">
+            study hard
+          </h1>
+          <a href="#" class="btn btn-brand">Get Started</a>
+          <a href="#" class="btn btn-outline-light ms-md-3">Our Works</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <!-- -----------------------featured books slider --------------------------------- -->
 <section class="featured" id="featured">
-  <h1 class="heading"><span>Featured Books</span></h1>
+  <h1 class="heading"><span>Most Visited Books</span></h1>
   <div class="swiper container featured-slider">
     <div class="swiper-wrapper">
-      <div class="swiper-slide box">
-        <div class="icons">
-          <a href="" class="fas fa-search"></a>
-          <a href="" class="fas fa-heart"></a>
-          <a href="" class="fas fa-eye"></a>
-        </div>
-        <div class="image">
-          <img src="image/book-1.png" alt="" />
-        </div>
-        <div class="content">
-          <h3>Featured Books</h3>
-          <div class="price">200Af <span>150Af</span></div>
-          <a href="" class="btn btn-warning">contact to seller</a>
-        </div>
-      </div>
 
+      {% for book in most_visited %}
+      {% for bk in book %}
+      
       <div class="swiper-slide box">
         <div class="icons">
           <a href="" class="fas fa-search"></a>
           <a href="" class="fas fa-heart"></a>
-          <a href="" class="fas fa-eye"></a>
+          <a href="{{ bk.get_absolute_url }}" class="fas fa-eye"></a>
         </div>
         <div class="image">
-          <img src="image/book-2.png" alt="" />
+          <img src="{{ bk.image.url }}" alt="" />
         </div>
         <div class="content">
-          <h3>featured books</h3>
-          <div class="price">200Af <span>150Af</span></div>
-          <a href="" class="btn btn-warning">contact to seller</a>
+          <h3>{{ bk.title }}</h3>
+          <h4>{{ bk.Author }}</h4>
+          <div class="price">{{ bk.price }}<span>150Af</span></div>
+          <a href="{{ bk.get_absolute_url }}" class="btn btn-warning text-white">contact to seller</a>
         </div>
       </div>
+      {% endfor %}
+      {% endfor %}
 
-      <div class="swiper-slide box">
-        <div class="icons">
-          <a href="" class="fas fa-search"></a>
-          <a href="" class="fas fa-heart"></a>
-          <a href="" class="fas fa-eye"></a>
-        </div>
-        <div class="image">
-          <img src="image/book-3.png" alt="" />
-        </div>
-        <div class="content">
-          <h3>featured books</h3>
-          <div class="price">200Af <span>150Af</span></div>
-          <a href="" class="btn btn-warning">contact to seller</a>
-        </div>
-      </div>
-
-      <div class="swiper-slide box">
-        <div class="icons">
-          <a href="" class="fas fa-search"></a>
-          <a href="" class="fas fa-heart"></a>
-          <a href="" class="fas fa-eye"></a>
-        </div>
-        <div class="image">
-          <img src="image/book-4.png" alt="" />
-        </div>
-        <div class="content">
-          <h3>featured books</h3>
-          <div class="price">200Af <span>150Af</span></div>
-          <a href="" class="btn btn-warning">contact to seller</a>
-        </div>
-      </div>
-
-      <div class="swiper-slide box">
-        <div class="icons">
-          <a href="" class="fas fa-search"></a>
-          <a href="" class="fas fa-heart"></a>
-          <a href="" class="fas fa-eye"></a>
-        </div>
-        <div class="image">
-          <img src="image/book-5.png" alt="" />
-        </div>
-        <div class="content">
-          <h3>featured books</h3>
-          <div class="price">200Af <span>150Af</span></div>
-          <a href="" class="btn btn-warning">contact to seller</a>
-        </div>
-      </div>
-
-      <div class="swiper-slide box">
-        <div class="icons">
-          <a href="" class="fas fa-search"></a>
-          <a href="" class="fas fa-heart"></a>
-          <a href="" class="fas fa-eye"></a>
-        </div>
-        <div class="image">
-          <img src="image/book-6.png" alt="" />
-        </div>
-        <div class="content">
-          <h3>featured books</h3>
-          <div class="price">200Af <span>150Af</span></div>
-          <a href="" class="btn btn-warning">contact to seller</a>
-        </div>
-      </div>
-
-      <div class="swiper-slide box">
-        <div class="icons">
-          <a href="" class="fas fa-search"></a>
-          <a href="" class="fas fa-heart"></a>
-          <a href="" class="fas fa-eye"></a>
-        </div>
-        <div class="image">
-          <img src="image/book-7.png" alt="" />
-        </div>
-        <div class="content">
-          <h3>featured books</h3>
-          <div class="price">200Af <span>150Af</span></div>
-          <a href="" class="btn btn-warning">contact to seller</a>
-        </div>
-      </div>
-
-      <div class="swiper-slide box">
-        <div class="icons">
-          <a href="" class="fas fa-search"></a>
-          <a href="" class="fas fa-heart"></a>
-          <a href="" class="fas fa-eye"></a>
-        </div>
-        <div class="image">
-          <img src="image/book-8.png" alt="" />
-        </div>
-        <div class="content">
-          <h3>featured books</h3>
-          <div class="price">200Af <span>150Af</span></div>
-          <a href="" class="btn btn-warning">contact to seller</a>
-        </div>
-      </div>
-
-      <div class="swiper-slide box">
-        <div class="icons">
-          <a href="" class="fas fa-search"></a>
-          <a href="" class="fas fa-heart"></a>
-          <a href="" class="fas fa-eye"></a>
-        </div>
-        <div class="image">
-          <img src="image/book-9.png" alt="" />
-        </div>
-        <div class="content">
-          <h3>featured books</h3>
-          <div class="price">200Af <span>150Af</span></div>
-          <a href="" class="btn btn-warning">contact to seller</a>
-        </div>
-      </div>
-
-      <div class="swiper-slide box">
-        <div class="icons">
-          <a href="" class="fas fa-search"></a>
-          <a href="" class="fas fa-heart"></a>
-          <a href="" class="fas fa-eye"></a>
-        </div>
-        <div class="image">
-          <img src="image/book-10.png" alt="" />
-        </div>
-        <div class="content">
-          <h3>featured books</h3>
-          <div class="price">200Af <span>150Af</span></div>
-          <a href="" class="btn btn-warning">contact to seller</a>
-        </div>
-      </div>
     </div>
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
@@ -228,184 +140,46 @@
 <!-- -----------------------------arrivals slider ----------------------------- -->
 
 <section class="arrivals" id="arrivals">
-  <h1 class="heading"><span>New Books</span></h1>
+  <h1 class="heading"><span>Latest Books</span></h1>
   <div class="swiper container arrivals-slider">
     <div class="swiper-wrapper">
-      <a href="#" class="swiper-slide box">
+      {% for book in latest_books %}
+      {% for bk in book %}
+      <a href="{{ bk.get_absolute_url }}" class="swiper-slide box">
         <div class="image">
-          <img src="image/book-1.png" alt="" />
+          <img src="{{ bk.image.url }}" alt="" />
         </div>
         <div class="content">
-          <h3>new books</h3>
-          <div class="price">120Af <span>200Af</span></div>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
-          </div>
+          <h3>{{ bk.title }}</h3>
+          <div class="price">{{ bk.price }} <span>200Af</span></div>
+          <p class="text-dark">Author: {{ bk.Author }}</p>
         </div>
       </a>
 
-      <a href="#" class="swiper-slide box">
-        <div class="image">
-          <img src="image/book-2.png" alt="" />
-        </div>
-        <div class="content">
-          <h3>new books</h3>
-          <div class="price">120Af <span>200Af</span></div>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
-          </div>
-        </div>
-      </a>
-
-      <a href="#" class="swiper-slide box">
-        <div class="image">
-          <img src="image/book-3.png" alt="" />
-        </div>
-        <div class="content">
-          <h3>new books</h3>
-          <div class="price">120Af <span>200Af</span></div>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
-          </div>
-        </div>
-      </a>
-
-      <a href="#" class="swiper-slide box">
-        <div class="image">
-          <img src="image/book-4.png" alt="" />
-        </div>
-        <div class="content">
-          <h3>new books</h3>
-          <div class="price">120Af <span>200Af</span></div>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
-          </div>
-        </div>
-      </a>
-
-      <a href="#" class="swiper-slide box">
-        <div class="image">
-          <img src="image/book-5.png" alt="" />
-        </div>
-        <div class="content">
-          <h3>new books</h3>
-          <div class="price">120Af <span>200Af</span></div>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
-          </div>
-        </div>
-      </a>
+      {% endfor %}
+      {% endfor %}
     </div>
   </div>
-
-  <div class="swiper arrivals-slider container">
+  <div class="swiper container arrivals-slider">
     <div class="swiper-wrapper">
-      <a href="#" class="swiper-slide box">
+      {% for book in latest_books2 %}
+      {% for bk in book %}
+      <a href="{{ bk.get_absolute_url }}" class="swiper-slide box">
         <div class="image">
-          <img src="image/book-6.png" alt="" />
+          <img src="{{ bk.image.url }}" alt="" />
         </div>
         <div class="content">
-          <h3>new books</h3>
-          <div class="price">120Af <span>200Af</span></div>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
-          </div>
+          <h3>{{ bk.title }}</h3>
+          <div class="price">{{ bk.price }} <span>200Af</span></div>
+          <p class="text-dark">Author: {{ bk.Author }}</p>
         </div>
       </a>
 
-      <a href="#" class="swiper-slide box">
-        <div class="image">
-          <img src="image/book-7.png" alt="" />
-        </div>
-        <div class="content">
-          <h3>new books</h3>
-          <div class="price">120Af <span>200Af</span></div>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
-          </div>
-        </div>
-      </a>
-
-      <a href="#" class="swiper-slide box">
-        <div class="image">
-          <img src="image/book-8.png" alt="" />
-        </div>
-        <div class="content">
-          <h3>new books</h3>
-          <div class="price">120Af <span>200Af</span></div>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
-          </div>
-        </div>
-      </a>
-
-      <a href="#" class="swiper-slide box">
-        <div class="image">
-          <img src="image/book-9.png" alt="" />
-        </div>
-        <div class="content">
-          <h3>new books</h3>
-          <div class="price">120Af <span>200Af</span></div>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
-          </div>
-        </div>
-      </a>
-
-      <a href="#" class="swiper-slide box">
-        <div class="image">
-          <img src="image/book-10.png" alt="" />
-        </div>
-        <div class="content">
-          <h3>new books</h3>
-          <div class="price">120Af <span>200Af</span></div>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
-          </div>
-        </div>
-      </a>
+      {% endfor %}
+      {% endfor %}
     </div>
   </div>
+
 </section>
 
 {% endblock %}

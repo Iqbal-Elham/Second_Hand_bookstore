@@ -40,7 +40,7 @@ class productManager(models.Manager):
         return self.get_queryset().filter(category__title__iexact=category_name, active=True)
 
 
-class book(models.Model):
+class Book(models.Model):
     title = models.CharField(max_length=150)
     description = models.TextField()
     Author = models.CharField(max_length=150, null=True)
@@ -51,6 +51,7 @@ class book(models.Model):
     image = models.ImageField(
         upload_to=upload_image_path, null=True, blank=True)
     active = models.BooleanField(default=False)
+    visit_count = models.IntegerField(default=0)
 
     objects = productManager()
 
