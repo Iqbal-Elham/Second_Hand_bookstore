@@ -28,26 +28,7 @@ of Simple CSS Waves-->
 
         <div class="login-form-container">
             <a href="/"><i id="close-login-btn" class="fa-solid fa-circle-xmark"></i></a>
-            <form id="sign-in-form" method="post">
-                <h3>Sign in</h3>
-                {% csrf_token %}
-                <label for="loginForm.user_name.id_for_label">{{ loginForm.user_name.label }}</label>
-                {{loginForm.user_name}} {% for error in loginForm.user_name.errors %}
-                <p style="color: red; padding: 0.3rem">{{error}}</p>
-                {% endfor %}
-                <label for="loginForm.password.id_for_label">{{ loginForm.password.label }}</label>
-                {{loginForm.password}} {% for error in loginForm.password.errors %}
-                <p style="color: red">{{error}}</p>
-                {% endfor %}
-                <div class="checkbox">
-                    <input type="checkbox" name="" id="remember-me" />
-                    <label for="remember-me">Remember me</label>
-                </div>
-                <input type="submit" value="sign in" class="sub-btn" />
-                <p>Forgot password ? <a href="#">click here</a></p>
-                <p>Don't have account ? <a onclick="displayForm('sign-up')">Create Account</a></p>
-            </form>
-            <form id="sign-up-form" method="post">
+            <form method="post">
                 <h3>Sign Up</h3>
                 {% csrf_token %}
                 <label for="" class="col-sm-4 col-form-label text-white">Name</label>
@@ -71,9 +52,8 @@ of Simple CSS Waves-->
                 <p style="color: red; padding: 0.3rem">{{error}}</p>
                 {% endfor %}
                 <input type="submit" value="sign up" class="sub-btn" />
-                <p>Already have account ? <a onclick="displayForm('sign-in')" class="text-warning h3 ">Sign In</a></p>
+                <p>Already have account ? <a href="/login" class="text-warning h3 ">Sign In</a></p>
             </form>
-
         </div>
     </div>
 
@@ -101,5 +81,4 @@ of Simple CSS Waves-->
     <p>By Mohammad Iqbal Elham</p>
 </div>
 
-<script src="{% static 'styles/js/login.js' %}"></script>
 <!--Content ends-->

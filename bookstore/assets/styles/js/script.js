@@ -38,15 +38,6 @@ $(document).ready(function () {
             1000: {
 
             },
-            // 1300: {
-
-            // },
-            // 1600: {
-
-            // },
-            // 2000: {
-
-            // },
         }
     })
 });
@@ -114,3 +105,6 @@ var swiper = new Swiper(".arrivals-slider", {
     },
 
 });
+
+
+

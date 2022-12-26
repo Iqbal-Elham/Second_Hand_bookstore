@@ -28,7 +28,7 @@ def wish_list(request, *args, **kwargs):
         'details' : None,
     }
     open_wish = Wish.objects.filter(owner_id=request.user.id).first()
-    if open_wish is not None:
+    if open_wish is not None :
         context['wish'] = open_wish
         context['details'] = open_wish.wishdetail_set.all()
     return render(request, 'wish_list.html', context)

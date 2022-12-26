@@ -226,7 +226,7 @@ p {
   }
   
   .sub-btn:hover {
-    background: rgb(202, 79, 22);
+    background: rgb(230, 177, 4);
     align-items: center;
 }
 
@@ -237,3 +237,7 @@ p {
     margin: 2rem;
   }
   }
+#sign-up-form 
+{
+  display: none;
+}

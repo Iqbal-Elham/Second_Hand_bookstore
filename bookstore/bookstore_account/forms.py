@@ -13,6 +13,9 @@ class login_form(forms.Form):
         label="Password"
     )
 
+class dateInput(forms.DateInput):
+    input_type = 'date'
+
 class register_form(forms.Form):
 
     user_name = forms.CharField(
@@ -30,22 +33,6 @@ class register_form(forms.Form):
     re_password = forms.CharField(
         widget=forms.PasswordInput(attrs={"class":"form-control","placeholder":"Enter your password again"}),
         
-    )
-    city = forms.CharField(
-        widget=forms.TextInput(attrs={"class":"form-control","placeholder":"Enter your city"}),
-       
-    )
-    address = forms.CharField(
-        widget=forms.TextInput(attrs={"class":"form-control","placeholder":"Enter your address"}),
-       
-    )
-    phone_num = forms.CharField(
-        widget=forms.TextInput(attrs={"class":"form-control","placeholder":"Enter your phone number"}),
-       
-    )
-    whatsapp_num = forms.CharField(
-        widget=forms.TextInput(attrs={"class":"form-control","placeholder":"Enter your whatsapp number"}),
-       
     )
 
     
@@ -71,3 +58,46 @@ class register_form(forms.Form):
             raise forms.ValidationError("Passwords does not match")
         
         return password
+
+class editRegisterForm(forms.Form):
+    
+    profile_pic = forms.ImageField(
+        widget=forms.FileInput(attrs={"id":"file"})
+    )
+    user_name = forms.CharField(
+        widget=forms.TextInput(attrs={"class":"form-control","placeholder":"Enter your username"}),
+        
+    )
+    email = forms.EmailField(
+        widget=forms.EmailInput(attrs={"class":"form-control","placeholder":"Enter your email"}),
+        
+    )
+    date_of_birth = forms.DateField(
+        widget=dateInput,
+
+    )
+    city = forms.CharField(
+        widget=forms.TextInput(attrs={"class":"form-control","placeholder":"Enter your city"}),
+
+    )
+    address = forms.CharField(
+        widget=forms.TextInput(attrs={"class":"form-control","placeholder":"Enter your address"}),
+    
+    )
+    CHOICES = [
+        ('Male', 'Male'),
+        ('Female', 'Female'),
+    ]
+    gender = forms.ChoiceField(
+        widget=forms.RadioSelect(),
+        choices=CHOICES, 
+        
+    )
+    phone_num = forms.CharField(
+        widget=forms.TextInput(attrs={"class":"form-control","placeholder":"Enter your phone number"}),
+    
+    )
+    whatsapp_num = forms.CharField(
+        widget=forms.TextInput(attrs={"class":"form-control","placeholder":"Enter your whatsapp number"}),
+    
+    )

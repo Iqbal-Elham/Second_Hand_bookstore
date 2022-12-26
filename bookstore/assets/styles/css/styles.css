@@ -38,6 +38,7 @@ html {
   overflow-x: hidden;
   scroll-padding: 5rem;
   scroll-behavior: smooth;
+  list-style: none;
 }
 
 ::-webkit-scrollbar {
@@ -692,6 +693,10 @@ nav .btn-light:hover {
 .new_account_header .heading span {
   border: 2px solid;
   border-color: var(--color);
+}
+.gender-radios ul 
+{
+  list-style: none;
 }
 
 /* ----------media queries---------- */

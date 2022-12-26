@@ -1,0 +1,134 @@
+:root {
+  --color: #f0c808;
+  --color-btn: #b19610;
+  --black: #444;
+  --border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  --border-hover: 0.1rem solid var(--black);
+  --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+*,
+a {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: all 0.2s linear;
+  transition: width none;
+}
+
+html {
+  font-size: 90%;
+  overflow-x: hidden;
+  scroll-padding: 5rem;
+  scroll-behavior: smooth;
+  background-color: rgba(199, 194, 194, 0.473);
+}
+
+.nav-bar {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 2;
+  right: 0;
+}
+.nav-bar a 
+{
+  color: #444;
+  font-size: 22px;
+  cursor: pointer;
+}
+.nav-bar a:hover 
+{
+  color: #b19610;
+}
+.nav-brand
+{
+  color: #b19610;
+  font-family:cursive;
+}
+.user_sidebar {
+  background-color: var(--color);
+  /* width: 300px; */
+  position: fixed;
+  height: 100vh;
+  /* overflow: auto; */
+  padding: 4rem;
+  z-index: 3;
+  background: linear-gradient(#ffbb00, #ffd504d3);
+}
+
+.user_sidebar a {
+  border-bottom: 3px solid gray;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 0.4rem;
+}
+.user_sidebar a:hover
+{
+  background: rgba(128, 128, 128, 0.411);
+  border-radius: 6%;
+}
+
+.content {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  background-color: white;
+  height: 80vh;
+  padding: 2rem 5rem;
+  border-radius: 2rem;
+}
+
+#books,
+#change_password {
+  display: none;
+}
+#upload-img-div {
+  width: 180px;
+  height: 180px;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: relative;
+  border-radius: 20%;
+  overflow: hidden;
+  border: 1px solid var(--color);
+
+}
+#file {
+  display: none;
+}
+
+#uploadBtn {
+  height: 40px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  line-height: 30px;
+  font-family: sans-serif;
+  font-size: 15px;
+  cursor: pointer;
+  display: none;
+}
+
+.gender-radios ul 
+{
+  list-style: none;
+}
+.dob input
+{
+  border: 1px solid rgba(128, 128, 128, 0.425);
+  border-radius: 4px;
+  width: 100%;
+  padding: 0.4rem 1rem;
+}
