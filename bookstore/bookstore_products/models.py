@@ -1,5 +1,6 @@
 from django.db import models
 from django.db.models import Q
+from django.contrib.auth.models import User
 import os
 
 from bookstore_category.models import bookCategory
@@ -41,16 +42,19 @@ class productManager(models.Manager):
 
 
 class Book(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     title = models.CharField(max_length=150)
     description = models.TextField()
     Author = models.CharField(max_length=150, null=True)
     publisher = models.CharField(max_length=150, null=True)
+    language = models.CharField(max_length=150, blank=True, null=True)
+    edition = models.CharField(max_length=150, blank=True, null=True)
     Date = models.DateTimeField(null=True)
     price = models.IntegerField()
-    category = models.ManyToManyField(bookCategory, blank=True)
-    image = models.ImageField(
+    category = models.ManyToManyField(bookCategory, blank=True,)
+    image = models.ImageField(    
         upload_to=upload_image_path, null=True, blank=True)
-    active = models.BooleanField(default=False)
+    active = models.BooleanField(default=True)
     visit_count = models.IntegerField(default=0)
 
     objects = productManager()

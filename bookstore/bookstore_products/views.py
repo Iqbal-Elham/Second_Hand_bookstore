@@ -5,6 +5,7 @@ from django.views.generic import ListView
 from bookstore_category.models import bookCategory
 from bookstore_wishlist.forms import userWishlistForm
 from .models import Book
+from .forms import sellBookForm
 from django.http import Http404
 # Create your views here.
 
@@ -81,3 +82,36 @@ def category_partial(request):
     }
 
     return render(request, './category_partial.html', context)
+
+def sellBook(request):
+    sellForm = sellBookForm(request.POST or None, request.FILES or None)
+    if sellForm.is_valid():
+        bookName = sellForm.cleaned_data.get('book_name')
+        book_author = sellForm.cleaned_data.get('book_author')
+        book_publisher = sellForm.cleaned_data.get('book_publisher')
+        book_edition = sellForm.cleaned_data.get('book_edition')
+        book_language = sellForm.cleaned_data.get('book_language')
+        price = sellForm.cleaned_data.get('price')
+        category = sellForm.cleaned_data.get('category')
+        date = sellForm.cleaned_data.get('date')
+        book_pic = sellForm.cleaned_data.get('book_pic')
+        description = sellForm.cleaned_data.get('description')
+        instance = Book.objects.create(
+            title=bookName,
+            Author=book_author,
+            publisher=book_publisher,
+            edition=book_edition,
+            price=price,
+            language=book_language,
+            Date=date,
+            description=description,
+            image=book_pic,
+        )
+
+        instance.category.add(category)
+        sellForm = sellBookForm()
+
+    context = {
+        'sellForm': sellForm
+    }
+    return render(request, 'sell_book.html', context)
