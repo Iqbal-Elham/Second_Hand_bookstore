@@ -21,6 +21,22 @@ a {
   transition: width none;
 }
 
+::-webkit-scrollbar {
+  width: 0.6rem;
+  border-left: 1px solid #e6ecf8;
+  width: 14px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color);
+  border-radius: 9px;
+}
+
+
 html {
   font-size: 90%;
   overflow-x: hidden;
@@ -31,7 +47,7 @@ html {
 
 .nav-bar {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-  position: sticky;
+  position: fixed;
   top: 0;
   background-color: white;
   z-index: 2;
@@ -41,11 +57,12 @@ html {
 {
   color: #444;
   font-size: 22px;
-  cursor: pointer;
 }
-.nav-bar a:hover 
+.nav-bar .menu a:hover 
 {
   color: #b19610;
+  cursor: pointer;
+
 }
 .nav-brand
 {
@@ -79,15 +96,11 @@ html {
   top: 80px;
   right: 0;
   background-color: white;
-  height: 80vh;
-  padding: 2rem 5rem;
+  /* height: 80vh; */
+  padding: 0rem 5rem;
   border-radius: 2rem;
 }
 
-#books,
-#change_password {
-  display: none;
-}
 #upload-img-div {
   width: 180px;
   height: 180px;
@@ -131,4 +144,12 @@ html {
   border-radius: 4px;
   width: 100%;
   padding: 0.4rem 1rem;
+}
+
+.book-date input{
+  border: 1px solid rgba(128, 128, 128, 0.425);
+  border-radius: 4px;
+  width: 100%;
+  padding: 0.4rem 1rem;
+  margin-bottom: 1.6rem;
 }

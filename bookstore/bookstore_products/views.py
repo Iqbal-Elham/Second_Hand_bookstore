@@ -1,12 +1,16 @@
 import itertools
 from django.shortcuts import render
 from django.views.generic import ListView
+from bookstore_comments.forms import CommentForm
+from bookstore_comments.models import Comments
+
 
 from bookstore_category.models import bookCategory
 from bookstore_wishlist.forms import userWishlistForm
 from .models import Book
 from .forms import sellBookForm
 from django.http import Http404
+from django.utils.timezone import datetime
 # Create your views here.
 
 
@@ -50,6 +54,18 @@ def bookDetails(request, *args, **kwargs):
     books.visit_count += 1
     books.save()
 
+    commentForm = CommentForm(request.POST or None)
+    if commentForm.is_valid():
+        comment = commentForm.cleaned_data.get('comment')
+        Comments.objects.create(
+            user=request.user,
+            book=books,
+            comment=comment,
+            date=datetime.today(),
+        )
+        commentForm = CommentForm()
+    if book_id is not None:
+        book_comment = Comments.objects.filter(book=book_id)
     related_books = Book.objects.get_queryset().filter(category__book=books).distinct()
     grouped_related_books = my_grouper(4, related_books)
     grouped_related_books = list(grouped_related_books)
@@ -57,9 +73,29 @@ def bookDetails(request, *args, **kwargs):
         'books': books,
         'related_books': grouped_related_books,
         'wish_form' :new_wish_form,
+        'commentForm':commentForm,
+        'comments': book_comment
+        
     }
     return render(request, './book_details.html', context)
 
+
+def add_comment(request, *args, **kwargs):
+    pass
+    # commentForm = CommentForm(request.POST or None)
+    # book_id = kwargs['bookId']
+    # book = Book.objects.get_by_id(book_id)
+    # if commentForm.is_valid():
+    #     comment = commentForm.cleaned_data.get('comment')
+
+    #     Comments.objects.create(
+    #         user=request.user,
+    #         book=book,
+    #         comment=comment
+    #     )
+    # context = {
+    # }
+    # return render(request, './book_details.html', context)
 
 class searchBookView(ListView):
 
@@ -97,6 +133,7 @@ def sellBook(request):
         book_pic = sellForm.cleaned_data.get('book_pic')
         description = sellForm.cleaned_data.get('description')
         instance = Book.objects.create(
+            user=request.user,
             title=bookName,
             Author=book_author,
             publisher=book_publisher,

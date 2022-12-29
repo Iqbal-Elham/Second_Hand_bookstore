@@ -15,16 +15,16 @@
             </button> -->
             <button type="button" class="btn text-light position-relative">
                 <a href="/wishlist"> <i class="fa-solid fa-heart"> Wish list</i></a>
-                <span class="position-absolute top-0 start-100 translate-middle badge bg-warning">2</span>
+                <!-- <span class="position-absolute top-0 start-100 translate-middle badge bg-warning">2</span> -->
             </button>
 
             {% if not request.user.is_authenticated %}
             <button type="button" class="btn text-light position-relative" id="login-btn">
-                <a href="/login"><i class="fa-solid fa-lock"> Login</i></a>
+                <a href="/login"><i class="fa-solid fa-lock"> Login / Register</i></a>
             </button>
             {% else %}
             <button type="button" class="btn text-light position-relative">
-                <a href="/admin"><i class="fa-solid fa-user"> Profile</i></a>
+                <a href="/user"><i class="fa-solid fa-user"> Profile</i></a>
             </button>
             <button type="button" class="btn text-light position-relative" id="login-btn">
                 <a href="/logout"><i class="fa-solid fa-lock"> Logout</i></a>

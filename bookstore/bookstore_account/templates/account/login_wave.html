@@ -44,8 +44,8 @@ of Simple CSS Waves-->
                     <label for="remember-me">Remember me</label>
                 </div>
                 <input type="submit" value="sign in" class="sub-btn" />
-                <p>Forgot password ? <a href="#">click here</a></p>
-                <p>Don't have account ? <a onclick="displayForm('sign-up')">Create Account</a></p>
+                <p>Forgot password ? <a href="/password_reset">click here</a></p>
+                <p>Don't have account ? <a style="cursor: pointer;" onclick="displayForm('sign-up')" class="text-warning h3 ">Create Account</a></p>
             </form>
             <form id="sign-up-form" method="post">
                 <h3>Sign Up</h3>
@@ -71,7 +71,7 @@ of Simple CSS Waves-->
                 <p style="color: red; padding: 0.3rem">{{error}}</p>
                 {% endfor %}
                 <input type="submit" value="sign up" class="sub-btn" />
-                <p>Already have account ? <a onclick="displayForm('sign-in')" class="text-warning h3 ">Sign In</a></p>
+                <p>Already have account ? <a style="cursor: pointer;" onclick="displayForm('sign-in')" class="text-warning h3 ">Sign In</a></p>
             </form>
 
         </div>

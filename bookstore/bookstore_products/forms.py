@@ -57,3 +57,4 @@ class sellBookForm(forms.Form):
         widget=forms.FileInput(attrs={"class":"form-control mb-4","id":"file"})
     )
     
+

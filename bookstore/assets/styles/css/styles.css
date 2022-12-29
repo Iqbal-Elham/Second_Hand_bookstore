@@ -73,6 +73,11 @@ html {
   border-radius: 2rem;
 }
 
+.nav .nav-item a:is(:link, :active, :visited).active {
+  color: var(--black) !important;
+  border-bottom: 2px solid var(--black);
+}
+
 .navbar {
   box-shadow: 0 3px 9px 3px rgb(74, 71, 71);
 }

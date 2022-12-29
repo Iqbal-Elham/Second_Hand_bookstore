@@ -1,5 +1,6 @@
 from django import forms 
 from django.contrib.auth.models import User
+from django.contrib.auth.forms import PasswordChangeForm, PasswordResetForm, SetPasswordForm
 
 
 class login_form(forms.Form):
@@ -13,7 +14,7 @@ class login_form(forms.Form):
         label="Password"
     )
 
-class dateInput(forms.DateInput):
+class dateInput(forms.DateTimeInput):
     input_type = 'date'
 
 class register_form(forms.Form):
@@ -72,7 +73,7 @@ class editRegisterForm(forms.Form):
         widget=forms.EmailInput(attrs={"class":"form-control","placeholder":"Enter your email"}),
         
     )
-    date_of_birth = forms.DateField(
+    date_of_birth = forms.DateTimeField(
         widget=dateInput,
 
     )
@@ -101,3 +102,33 @@ class editRegisterForm(forms.Form):
         widget=forms.TextInput(attrs={"class":"form-control","placeholder":"Enter your whatsapp number"}),
     
     )
+
+
+
+class MyPasswordChangeForm(PasswordChangeForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        for fieldname in ['old_password', 'new_password1', 'new_password2']:
+            self.fields[fieldname].widget.attrs = {'class': 'form-control w-50'}
+
+
+class bootstrapStyleMixin:
+    field_names = None 
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        if self.field_names:
+            for fieldname in self.field_names:
+                self.fields[fieldname].widget.attrs = {'class': 'form-control'}
+        
+        else:
+            raise ValueError('The field names must be set')
+
+
+class MyResetPassForm(bootstrapStyleMixin, PasswordResetForm):
+    field_names = ['email']
+    
+class MySetPassForm(bootstrapStyleMixin, SetPasswordForm):
+    field_names = ['new_password1', 'new_password2']

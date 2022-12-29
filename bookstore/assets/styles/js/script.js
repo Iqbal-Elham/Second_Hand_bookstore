@@ -10,8 +10,16 @@ $(window).on("load", function () {
 })
 
 
+let activePage = window.location.pathname;
+let container = document.getElementById('nav2');
+var navItems = container.querySelectorAll(".nav-item a");
+navItems.forEach(link => {
+    if(link.href.includes(`${activePage}`)){
+        link.classList.add('active');
+    }
+})
 
-// book-slider
+// book-slider}
 $(document).ready(function () {
 
     $('#hero-slider').owlCarousel({

@@ -28,10 +28,15 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+EMAIL_FILE_PATH = str(BASE_DIR.joinpath('sent_emails'))
+
 
 # Application definition
 
 INSTALLED_APPS = [
+    # 'admin_tools_stats',
+    # 'django_nvd3',
     'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -44,7 +49,8 @@ INSTALLED_APPS = [
     'bookstore_products',
     'bookstore_category',
     'bookstore_contact_us',
-    'bookstore_wishlist'
+    'bookstore_wishlist',
+    'bookstore_comments',
 ]
 
 MIDDLEWARE = [
@@ -113,7 +119,7 @@ JAZZMIN_UI_TWEAKS = {
     "footer_small_text": False,
     "body_small_text": False,
     "brand_small_text": False,
-    "brand_colour": "navbar-navy",
+    "brand_colour": "navbar-gray",
     "accent": "accent-warning",
     "navbar": "navbar-warning navbar-light",
     "no_navbar_border": False,
