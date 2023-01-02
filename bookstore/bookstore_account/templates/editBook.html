@@ -58,7 +58,7 @@
       <form action="" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-6 ">
             <div class="mb-4 d-flex justify-content-center flex-column align-items-center" id="upload-img-div">
               <img src=" {{ bookDetail.image.url }} " width="180" height="180" class="mx-auto d-block " id="uploadImage"
                 alt="..." />
@@ -72,13 +72,13 @@
             {{ editBook.book_author }}
             <label for="" class="form-label">Book Publisher</label>
             {{ editBook.book_publisher }}
-
-
-          </div>
-          <div class="col-md-6">
-
             <label for="" class="form-label">Book Language</label>
-            {{ editBook.book_language }}
+            {{ editBook.book_language }} 
+          </div>
+          <div class="col-md-6 d-flex flex-column justify-content-end">
+
+            <label for="" class="form-label">Date <span class="text-secondary h6">(Disabled)</span></label>
+            <div class="book-date" style="pointer-events: none;">{{ editBook.date }}</div>
             <label for="" class="form-label ">Category</label>
             {{ editBook.category }}
             <label for="" class="form-label">Book Edition</label>
@@ -89,7 +89,7 @@
             {{ editBook.description }}
           </div>
         </div>
-        <div class="row d-grid gap-2 col-6 mx-auto">
+        <div class="row d-grid gap-2 col-6 mx-auto my-3">
           <button class="btn btn-warning text-white" type="submit">Save Changes</button>
         </div>
       </form>

@@ -16,6 +16,7 @@ def add_user_wish(request):
         
         book_id = new_wish_form.cleaned_data.get('book_id')
         bookk = Book.objects.get_by_id(book_id=book_id)
+        # search = Wish.objects.filter(owner_id=request.user, )
         wish.wishdetail_set.create(wishBook_id = bookk.id,price=bookk.price)
         return redirect(f'/books/{bookk.id}/{bookk.title.replace(" ", "-")}')
 

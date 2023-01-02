@@ -121,9 +121,9 @@ p {
     height: 100%;
     width: 100%;
 
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    /*backdrop-filter: blur(44px);
-    -webkit-backdrop-filter: blur(44px); */
+    box-shadow: 32px 32px 32px 32px rgba(31, 38, 135, 0.747);
+    /* backdrop-filter: blur(44px); */
+    /* -webkit-backdrop-filter: blur(44px); */
     /* border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.822); */
   }
@@ -136,12 +136,12 @@ p {
     /* box-shadow: var(--box-shadow); */
     /* border-radius: 0.9rem; */
     margin: 5rem;
-    backdrop-filter: blur(1px);
+    backdrop-filter: blur(8px);
     border-radius: 32px;
     /* background-color: rgba(255, 255, 255, 0.8); */
-    box-shadow: 15px 15px 28px 0px rgba(31, 30, 30, 0.116),
-      inset -2px -2px 16px 0px rgba(31, 31, 30, 0.212),
-      inset 0px 7px 12px 0px rgba(255, 255, 255, 0.555);
+    box-shadow: 15px 15px 28px 0px rgba(31, 30, 30, 0.116);
+      /* inset -2px -2px 16px 0px rgba(31, 31, 30, 0.212), */
+      /* inset 0px 7px 12px 0px rgba(255, 255, 255, 0.555); */
   }
   
   .login-form-container form h3 {

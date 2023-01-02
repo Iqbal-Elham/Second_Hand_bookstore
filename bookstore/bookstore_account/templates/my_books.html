@@ -42,7 +42,7 @@
     <a href="/user#profile" type="button" class="text-dark ">Profile</a>
     <a href="/user/my-books" type="button" class="text-dark ">Your Books</a>
     <a href="/password_change" type="button" class="text-dark ">Change Password</a>
-    <a href="/user#comments"  type="button" class="text-dark ">Comments</a>
+    <a href="/user#comments" type="button" class="text-dark ">Comments</a>
   </div>
 
   <div class="col-md-10 content">
@@ -55,6 +55,11 @@
           </lord-icon>
           <h1 class="display-4">My Books</h1>
         </header>
+
+        <a href="/sell-book">
+          <button class="w-25 btn btn-warning text-white btn-block rounded-3 my-2">Add New Book +</button>
+        </a>
+
         <div class="table-contain">
           {% if books|length > 0 %}
           <div class="border-top border-5 border-rounded">
@@ -87,9 +92,9 @@
                   <td><a href="/edit-my-book/{{ book.id }}"><button
                         class="w-75 btn btn-warning text-white btn-block rounded-5">Edit</button></a></td>
                   <td>
-                    <a href="/remove-my-book/{{ book.id }}"> <lord-icon
-                        src="https://cdn.lordicon.com/qjwkduhc.json" trigger="loop-on-hover" delay="300"
-                        colors="primary:#646e78,secondary:#545454,tertiary:#e8b730" style="width:70px;height:70px">
+                    <a href="/remove-my-book/{{ book.id }}"> <lord-icon src="https://cdn.lordicon.com/qjwkduhc.json"
+                        trigger="loop-on-hover" delay="300" colors="primary:#646e78,secondary:#545454,tertiary:#e8b730"
+                        style="width:70px;height:70px">
                       </lord-icon></a>
                   </td>
                 </tr>

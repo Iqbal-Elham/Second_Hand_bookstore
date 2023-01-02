@@ -4,7 +4,7 @@ from django.views.generic import ListView
 from bookstore_comments.forms import CommentForm
 from bookstore_comments.models import Comments
 
-
+from django.contrib.auth.decorators import login_required
 from bookstore_category.models import bookCategory
 from bookstore_wishlist.forms import userWishlistForm
 from .models import Book
@@ -79,24 +79,6 @@ def bookDetails(request, *args, **kwargs):
     }
     return render(request, './book_details.html', context)
 
-
-def add_comment(request, *args, **kwargs):
-    pass
-    # commentForm = CommentForm(request.POST or None)
-    # book_id = kwargs['bookId']
-    # book = Book.objects.get_by_id(book_id)
-    # if commentForm.is_valid():
-    #     comment = commentForm.cleaned_data.get('comment')
-
-    #     Comments.objects.create(
-    #         user=request.user,
-    #         book=book,
-    #         comment=comment
-    #     )
-    # context = {
-    # }
-    # return render(request, './book_details.html', context)
-
 class searchBookView(ListView):
 
     template_name = './books_list.html'
@@ -119,6 +101,7 @@ def category_partial(request):
 
     return render(request, './category_partial.html', context)
 
+@login_required(login_url='/login')
 def sellBook(request):
     sellForm = sellBookForm(request.POST or None, request.FILES or None)
     if sellForm.is_valid():

@@ -167,6 +167,7 @@ def edit_my_book(request, *args, **kwargs):
             })
 
             if editBook.is_valid():
+
                 bookName = editBook.cleaned_data.get('book_name')
                 book_author = editBook.cleaned_data.get('book_author')
                 book_publisher = editBook.cleaned_data.get('book_publisher')

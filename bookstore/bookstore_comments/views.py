@@ -4,10 +4,10 @@ from bookstore_products.models import Book
 
 from .forms import CommentForm
 from .models import Comments
-
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
-
+@login_required(login_url='/login')
 def add_comment(request, *args, **kwargs):
   commentForm = CommentForm(request.POST or None)
   book_id = kwargs['bookId']

@@ -27,6 +27,7 @@ urlpatterns = [
     path('',include('bookstore_wishlist.urls')),
     path('footer',footer,name='footer'),
     path('admin/', admin.site.urls),
+    # path('admin_tools_stats/', include('admin_tools_stats.urls')),
 ]
 
 
