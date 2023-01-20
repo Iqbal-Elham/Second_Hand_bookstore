@@ -16,7 +16,7 @@ from django.utils.timezone import datetime
 
 class bookList(ListView):
     template_name = './books_list.html'
-    paginate_by = 6
+    paginate_by = 12
 
     def get_queryset(self):
         return Book.objects.get_active_products()
@@ -24,7 +24,7 @@ class bookList(ListView):
 
 class books_by_category(ListView):
     template_name = './books_list.html'
-    paginate_by = 6
+    paginate_by = 12
 
     def get_queryset(self):
         category_name = self.kwargs['category_title']
@@ -39,7 +39,6 @@ class books_by_category(ListView):
 def my_grouper(n, iterable):
     args = [iter(iterable)] * n
     return ([e for e in t if e is not None] for t in itertools.zip_longest(*args))
-
 
 def bookDetails(request, *args, **kwargs):
 
@@ -82,7 +81,7 @@ def bookDetails(request, *args, **kwargs):
 class searchBookView(ListView):
 
     template_name = './books_list.html'
-    paginate_by = 6
+    paginate_by = 12
 
     def get_queryset(self):
         request = self.request

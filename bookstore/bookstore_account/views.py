@@ -54,7 +54,7 @@ def login_wave(request):
         email = registerForm.cleaned_data.get("email")
         password = registerForm.cleaned_data.get("password")
         instanceUser = User.objects.create_user(username=username, email=email, password=password)
-        user_profile.objects.create(instanceUser)
+        user_profile.objects.create(user=instanceUser)
         return redirect("/login")
     
     form = login_form(request.POST or None)
@@ -127,7 +127,8 @@ def user_account(request):
         }
 
     return render(request, './user_account.html', context)
-
+    
+@login_required(login_url='/login')
 def myBooks(request):
     user_id = request.user.id
     user = User.objects.get(id=user_id)

@@ -1,53 +1,4 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" type="image" href="{% static 'images/logo3.png' %}" />
-  <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}" />
-  <link rel="stylesheet" href="{% static 'styles/css/user_style.css' %}">
-  <link rel="stylesheet" href="{% static 'styles/fonts-6/css/all.css' %}" />
-  <link rel="stylesheet" href="{% static 'styles/css/fonts.css' %}" />
-  <title>User Account</title>
-</head>
-
-<body>
-  <div class="row ">
-    <nav class="d-flex justify-content-around align-items-center px-5 py-2 gap-4 nav-bar bg-dark">
-      <h1 class="h1 nav-brand">User Account</h1>
-      <div class="menu d-flex">
-        <a href="/" class="d-flex align-items-center justify-content-center text-white"><lord-icon
-            src="https://cdn.lordicon.com/kxoxiwrf.json" trigger="loop-on-hover" delay="40"
-            colors="primary:#545454,secondary:#c79816" style="width:50px;height:50px">
-          </lord-icon><label for="logout">Home</label></a>
-        <a href="/books" class="d-flex align-items-center justify-content-center text-white"><lord-icon
-            src="https://cdn.lordicon.com/hursldrn.json" trigger="morph" delay="40"
-            colors="primary:#e8b730,secondary:#545454" style="width:50px;height:50px">
-          </lord-icon><label for="logout">Books</label></a>
-        <a href="/logout" class="d-flex align-items-center justify-content-center text-white"><lord-icon
-          src="https://cdn.lordicon.com/hcuxerst.json"
-          trigger="morph"
-          colors="primary:##e8b730,secondary:#e8b730"
-          style="width:50px;height:50px">
-      </lord-icon><label for="logout">log out</label></a>
-      </div>
-    </nav>
-  </div>
-
-  <!-- -------------------- Sidebar -------------------------------- -->
-  <div class="user_sidebar col-md-2 d-flex flex-column">
-    <img src="{{ user.user_profile.profile_pic.url }}" class="rounded-circle mb-4" width=150 height=150 alt="">
-    <p class="text-primary mb-5 text-center h3 text-uppercase">{{ user.username }}</p>
-    <a href="/user#profile" type="button" class="text-dark ">Profile</a>
-    <a href="/user/my-books" type="button" class="text-dark ">Your Books</a>
-    <a href="/password_change" type="button" class="text-dark ">Change Password</a>
-    <a href="/user#comments" type="button" class="text-dark ">Comments</a>
-  </div>
-
-  <div class="col-md-10 content">
+{% extends '_main_profile.html' %} {% block content %}
     <!-- ---------------------------------- Profile ----------------------------------- -->
     <div id="profile">
       <div style="height: 80vh;" class="d-flex flex-column justify-content-center">
@@ -143,12 +94,5 @@
         </form>
       </div>
     </div>
-  </div>
 
-  <script src=" {% static 'styles/js/user_script.js' %} "></script>
-  <script src=" {% static 'styles/js/jquery-3.6.0.js' %} "></script>
-  <script src=" {% static 'bootstrap/js/bootstrap.min.js' %} "></script>
-  <script src="https://cdn.lordicon.com/qjzruarw.js"></script>
-</body>
-
-</html>
+{% endblock %}

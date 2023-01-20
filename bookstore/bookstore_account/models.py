@@ -24,7 +24,7 @@ class user_profile(models.Model):
   gender = models.CharField(max_length=10,default='Male')
   phone_num = models.CharField(max_length=15, blank=True, null=True)
   whatsapp_num = models.CharField(max_length=15, blank=True, null=True)
-  profile_pic = models.ImageField(default='Lateri109_EpgjFtz.jpg' ,null=True, blank=True, upload_to=upload_image_path)
+  profile_pic = models.ImageField(default='default.jpg', upload_to=upload_image_path)
   
 
   def __str__(self):

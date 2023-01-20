@@ -37,8 +37,16 @@ class sellBookForm(forms.Form):
     (4, "Psychology"),
     (5, "Philosophy"),
     (6, "Literature"),
-    (7, "University"),
-    (8, "other"),
+    (7, "Medical"),
+    (8, "Computer"),
+    (9, "Economic"),
+    (10, "Sport"),
+    (11, "Management"),
+    (12, "Engineering"),
+    (13, "Social"),
+    (14, "Law"),
+    (15, "Languages"),
+    (16, "other"),
 )
   category = forms.ChoiceField(
         widget=forms.Select(attrs={"class":"form-select mb-4",}),

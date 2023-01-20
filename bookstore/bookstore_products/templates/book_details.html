@@ -4,12 +4,11 @@
 {% block content %}
 
 <h1 class="heading"><span>Book Detail</span></h1>
-<!-- col-md-3 -->
 <container class="book-detail">
   <div class="detail-category" id="">
     {% render_partial 'category_partial' %}
 </div>
-<!-- col-md-9 mb-3 mt-3 mt-md-0 -->
+
   <div class="book-section  ">
     <div class="book-image">
       <img src=" {{ books.image.url }} " width="270px" alt="" />
@@ -26,6 +25,14 @@
         <tr>
           <td>publisher:</td>
           <td>{{ books.publisher }}</td>
+        </tr>
+        <tr>
+          <td>Edition:</td>
+          <td>{{ books.edition }}</td>
+        </tr>
+        <tr>
+          <td>Language:</td>
+          <td>{{ books.language }}</td>
         </tr>
         <tr>
           <td>price:</td>
@@ -63,20 +70,17 @@
           <td>{{ books.user.username }}</td>
         </tr>
         <tr>
-          <td>phone Num:</td>
-          <td>{{ books.user.user_profile.phone_num }}</td>
-        </tr>
-        <tr>
           <td>Address:</td>
           <td>{{ books.user.user_profile.address }}</td>
+        </tr>
+        <tr>
+          <td>phone Num:</td>
+          <td>{{ books.user.user_profile.phone_num }}</td>
         </tr>
       </table>
       <div class="owner-icons">
         <a href="" class="text-secondary"
-          ><i class="fa-brands fa-whatsapp text-warning"></i> {{ books.user.user_profile.whatsapp_num }}</a
-        >
-        <a href="" class="text-secondary"
-          ><i class="fab fa-facebook-f text-warning"></i> Facebook</a
+          ><i class="fa-brands fa-whatsapp text-warning"></i> Whatsapp: &emsp; {{ books.user.user_profile.whatsapp_num }}</a
         >
     </div>
     </div>
@@ -93,6 +97,7 @@
       </div>
     </div>
       {% endfor %}
+    {% if request.user.is_authenticated %}
     <form action="" method="post" class="row mt-4">
       {% csrf_token %}
       <div class="col-md-8">{{ commentForm.comment }}</div>
@@ -100,6 +105,7 @@
         Comment
       </button>
     </form>
+      {% endif %}
   </div>
 </container>
 <section class="featured" id="featured">

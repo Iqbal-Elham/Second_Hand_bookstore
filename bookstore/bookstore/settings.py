@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'bookstore_contact_us',
     'bookstore_wishlist',
     'bookstore_comments',
+    #  'google_translate',
 ]
 
 MIDDLEWARE = [
