@@ -1,32 +1,32 @@
-{% extends '_main_profile.html' %} {% block content %}
+{% extends './_main_login_wave.html' %} {% block content %}
 <div class="inner-header">
     <div class="login-form-container">
         <a href="/"><i id="close-login-btn" class="fa-solid fa-circle-xmark"></i></a>
-        <form method="post">
+        <form id="sign-in-form" method="post">
             <h3>Sign Up</h3>
             {% csrf_token %}
             <label for="" class="col-sm-4 col-form-label text-white">Name</label>
-            {{ registerForm.user_name }}
+            {{ registerForm.user_name }} 
             {% for error in registerForm.user_name.errors %}
-            <p style="color: rgb(209, 13, 13); margin-top: 5px">{{error}}</p>
+            <p style="color:red; background:white; width:40%; text-align: center;font-size: 14px; font-weight: bold;margin-top: 10px; padding:0.2rem; border-radius: 20px;">{{error}}</p>
             {% endfor %}
             <label for="" class="col-sm-4 col-form-label text-white">Email</label>
-            {{ registerForm.email }}
+            {{ registerForm.email }} 
             {% for error in registerForm.email.errors %}
-            <p style="color: rgb(209, 13, 13); margin-top: 5px">{{error}}</p>
+            <p style="color:red; background:white; width:40%; text-align: center;font-size: 14px; font-weight: bold;margin-top: 10px; padding:0.2rem; border-radius: 20px;">{{error}}</p>
             {% endfor %}
             <label for="" class="col-sm-4 col-form-label text-white">Password</label>
             {{ registerForm.password }}
             {% for error in registerForm.password.errors %}
-            <p style="color: red; padding: 0.3rem">{{error}}</p>
+            <p style="color:red; background:white; width:40%; text-align: center;font-size: 14px; font-weight: bold;margin-top: 10px; padding:0.2rem; border-radius: 20px;">{{error}}</p>
             {% endfor %}
             <label for="" class="col-sm-4 col-form-label text-white">Confirm Password</label>
             {{ registerForm.re_password }}
             {% for error in registerForm.re_password.errors %}
-            <p style="color: red; padding: 0.3rem">{{error}}</p>
+            <p style="color:red; background:white; width:40%; text-align: center;font-size: 14px; font-weight: bold;margin-top: 10px; padding:0.2rem; border-radius: 20px;">{{error}}</p>
             {% endfor %}
             <input type="submit" value="sign up" class="sub-btn" />
-            <p>Already have account ? <a href="/login" class="text-warning h3 ">Sign In</a></p>
+            <p>Already have account ? <a style="cursor: pointer;" onclick="displayForm('sign-in')" class="text-warning h3 ">Sign In</a></p>
         </form>
     </div>
 </div>

@@ -30,24 +30,6 @@ def login_page(request):
     return render(request, 'account/login.html',context)
 
 def register(request):
-    if request.user.is_authenticated:
-        return redirect("/")
-    registerForm = register_form(request.POST or None)
-    
-    if registerForm.is_valid():
-        username = registerForm.cleaned_data.get("user_name")
-        email = registerForm.cleaned_data.get("email")
-        password = registerForm.cleaned_data.get("password")
-        instanceUser=User.objects.create_user(username=username, email=email, password=password)
-        return redirect("/login")
-    context = {
-        'registerForm' : registerForm,
-    }
-    return render(request, 'account/register_wave.html',context)
-
-
-
-def login_wave(request):
     registerForm = register_form(request.POST or None)
     if registerForm.is_valid():
         username = registerForm.cleaned_data.get("user_name")
@@ -56,7 +38,16 @@ def login_wave(request):
         instanceUser = User.objects.create_user(username=username, email=email, password=password)
         user_profile.objects.create(user=instanceUser)
         return redirect("/login")
-    
+    context = {
+        'registerForm' : registerForm,
+    }
+    if request.user.is_authenticated:
+        return redirect("/")
+    return render(request, 'account/register_wave.html',context)
+
+
+
+def login_wave(request):
     form = login_form(request.POST or None)
     if form.is_valid():
         username = form.cleaned_data.get("user_name")
@@ -65,10 +56,9 @@ def login_wave(request):
         if user is not None:
             login(request, user)
         else:
-            form.add_error("user_name", "Username not Found")
+            form.add_error("password", "Password does not match")
     context = {
         "loginForm" : form,
-        'registerForm' : registerForm,
     }
     if request.user.is_authenticated:
         return redirect("/")

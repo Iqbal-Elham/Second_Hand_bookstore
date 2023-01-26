@@ -141,7 +141,7 @@ p {
     border: 1px solid rgba(255, 255, 255, 0.822); */
 }
 
-.login-form-container form {
+.login-form-container #sign-in-form {
   /* background: #fff; */
   border: var(--border);
   width: 35rem;
@@ -149,7 +149,8 @@ p {
   /* box-shadow: var(--box-shadow); */
   /* border-radius: 0.9rem; */
   margin: 5rem;
-  backdrop-filter: blur(8px);
+  background-color: #3333331e;
+  backdrop-filter: blur(2px);
   border-radius: 32px;
   /* background-color: rgba(255, 255, 255, 0.8); */
   box-shadow: 15px 15px 28px 0px rgba(31, 30, 30, 0.116);
@@ -244,10 +245,10 @@ p {
 }
 
 .Or {
-  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
-  border-top: 2px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 2px solid rgba(10, 9, 9, 0.3);
+  border-top: 2px solid rgba(10, 9, 9, 0.3);
   font-size: 22px !important;
-  color: rgba(255, 255, 255, 0.5) !important;
+  color: rgba(10, 9, 9, 0.6) !important;
   text-align: center;
   letter-spacing: 0 !important;
   padding: 0 !important;
@@ -276,8 +277,4 @@ p {
     padding: 1rem;
     margin: 2rem;
   }
-}
-
-#sign-up-form {
-  display: none;
 }

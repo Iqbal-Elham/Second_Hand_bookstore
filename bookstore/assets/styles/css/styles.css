@@ -158,6 +158,7 @@ nav .btn-light:hover {
   background: var(--color-btn);
 }
 
+
 .slide5 {
   background: linear-gradient(#070e3d10, #070e3d10), url(../../images/blog-1.jpg);
 }
@@ -181,7 +182,7 @@ nav .btn-light:hover {
 }
 
 .bg-cover {
-  background-size: cover !important;
+  background-size:cover !important;
   background-position: center !important;
 }
 

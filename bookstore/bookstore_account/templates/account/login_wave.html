@@ -3,49 +3,25 @@
     <div class="inner-header">
         <div class="login-form-container">
             <a href="/"><i id="close-login-btn" class="fa-solid fa-circle-xmark"></i></a>
-            <form id="sign-in-form" method="post">
-                <h3>Sign in</h3>
-                {% csrf_token %}
-                <label for="loginForm.user_name.id_for_label">{{ loginForm.user_name.label }}</label>
-                {{loginForm.user_name}} {% for error in loginForm.user_name.errors %}
-                <p style="color: red; padding: 0.3rem">{{error}}</p>
-                {% endfor %}
-                <label for="loginForm.password.id_for_label">{{ loginForm.password.label }}</label>
-                {{loginForm.password}} {% for error in loginForm.password.errors %}
-                <p style="color: red">{{error}}</p>
-                {% endfor %}
-                <p class="d-flex justify-content-end text-decoration-none m-0"><a href="/password_reset">Forgot password?</a></p>
-                <input type="submit" value="sign in" class="sub-btn" />
+            <div id="sign-in-form">
+                <form  method="post">
+                    <h3>Sign in</h3>
+                    {% csrf_token %}
+                    <label for="loginForm.user_name.id_for_label">{{ loginForm.user_name.label }}</label>
+                    {{loginForm.user_name}} {% for error in loginForm.user_name.errors %}
+                    <p style="color:red; background:white; width:50%; text-align: center; font-weight: bold; padding:0.4rem; border-radius: 20px;">{{error}}</p>
+                    {% endfor %}
+                    <label for="loginForm.password.id_for_label">{{ loginForm.password.label }}</label>
+                    {{loginForm.password}} {% for error in loginForm.password.errors %}
+                    <p style="color:red; background:white; width:50%; text-align: center; font-weight: bold; padding:0.4rem; border-radius: 20px;">{{error}}</p>
+                    {% endfor %}
+                    <p class="d-flex justify-content-end text-decoration-none m-0 "><a  href="/password_reset">Forgot password?</a></p>
+                    <input type="submit" value="sign in" class="sub-btn" />
+                </form>
                 <p class="Or">Or</p>
-                <button onclick="displayForm('sign-up')" class="create-account">Create Account</button>
-            </form>
-            <form id="sign-up-form" method="post">
-                <h3>Sign Up</h3>
-                {% csrf_token %}
-                <label for="" class="col-sm-4 col-form-label text-white">Name</label>
-                {{ registerForm.user_name }} 
-                {% for error in registerForm.user_name.errors %}
-                <p style="color: rgb(209, 13, 13); margin-top: 5px">{{error}}</p>
-                {% endfor %}
-                <label for="" class="col-sm-4 col-form-label text-white">Email</label>
-                {{ registerForm.email }} 
-                {% for error in registerForm.email.errors %}
-                <p style="color: rgb(209, 13, 13); margin-top: 5px">{{error}}</p>
-                {% endfor %}
-                <label for="" class="col-sm-4 col-form-label text-white">Password</label>
-                {{ registerForm.password }}
-                {% for error in registerForm.password.errors %}
-                <p style="color: red; padding: 0.3rem">{{error}}</p>
-                {% endfor %}
-                <label for="" class="col-sm-4 col-form-label text-white">Confirm Password</label>
-                {{ registerForm.re_password }}
-                {% for error in registerForm.re_password.errors %}
-                <p style="color: red; padding: 0.3rem">{{error}}</p>
-                {% endfor %}
-                <input type="submit" value="sign up" class="sub-btn" />
-                <p>Already have account ? <a style="cursor: pointer;" onclick="displayForm('sign-in')" class="text-warning h3 ">Sign In</a></p>
-            </form>
-
+                <a href="/register"> <button class="create-account">Create Account</button></a>
+            </div>
+                
         </div>
     </div>
 

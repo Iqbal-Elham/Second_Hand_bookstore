@@ -14,6 +14,14 @@ class login_form(forms.Form):
         label="Password"
     )
 
+    def clean_user_name(self):
+        username = self.cleaned_data.get("user_name")
+        username_is_exist = User.objects.filter(username=username).exists()
+        if username_is_exist:
+            return username
+        raise forms.ValidationError("Username does not exist")
+    
+
 class dateInput(forms.DateTimeInput):
     input_type = 'date'
 
