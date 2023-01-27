@@ -58,7 +58,7 @@ class sellBookForm(forms.Form):
 
     )
   description = forms.CharField(
-    widget=forms.Textarea(attrs={'rows':"3",'class':'form-control mb-5', 'placeholder':'Tell us about your Experience for Studying'}),
+    widget=forms.Textarea(attrs={'rows':"3",'class':'form-control mb-5', 'placeholder':'Enter the description of the book'}),
     label = "description"
   )
   book_pic = forms.ImageField(

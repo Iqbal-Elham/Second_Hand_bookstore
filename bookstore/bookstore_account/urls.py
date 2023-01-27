@@ -1,6 +1,6 @@
 from django.urls import path
 from django.contrib.auth import views
-from .views import edit_my_book, log_out, login_page, myBooks, register,login_wave, user_account, remove_my_book
+from .views import edit_my_book, log_out, myBooks, register,login_wave, user_account, remove_my_book
 from .forms import MyPasswordChangeForm, MyResetPassForm, MySetPassForm
 
 
@@ -15,7 +15,6 @@ urlpatterns = [
 ]
 
 
-    # path("logout/", views.LogoutView.as_view(), name="logout"),
 urlpatterns += [
     path(
         "password_change/", 
