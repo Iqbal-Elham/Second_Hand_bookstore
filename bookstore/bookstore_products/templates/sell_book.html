@@ -1,0 +1,40 @@
+{% extends 'shared/_mainLayout.html' %} 
+{% block content %}
+<h1 class="heading mb-5"><span>Sell Book+</span></h1>
+<div class="container mt-3">
+  <div class="bg-white p-5 rounded-5">
+      <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+          <div class="row">
+              <div class="col-md-6">
+                <label for="" class="form-label h5">Book Name</label>
+                  {{ sellForm.book_name }}
+                  <label for="" class="form-label h5">Book Author</label>
+                  {{ sellForm.book_author }}
+                  <label for="" class="form-label h5">Book Publisher</label>
+                  {{ sellForm.book_publisher }}
+                  <label for="" class="form-label h5">Book Edition</label>
+                  {{ sellForm.book_edition }}
+                  <label for="" class="form-label h5 ">Category</label>
+                  {{ sellForm.category }}
+              </div>
+              <div class="col-md-6">
+                  <label for="" class="form-label h5">Book Language</label>
+                  {{ sellForm.book_language }}
+                  <label for="" class="form-label h5">Book Price</label>
+                  {{ sellForm.price }}
+                  <label for="" class="form-label h5">Upload Book Image</label>
+                  {{ sellForm.book_pic }}
+                  <label for="" class="form-label h5">Description</label>
+                  {{ sellForm.description }}
+              </div>
+          </div>
+          <div class="row d-grid gap-2 col-6 mx-auto">
+              <button class="btn btn-warning text-white rounded-5" type="submit" style="font-size: 18px;">Post</button>
+          </div>
+      </form>
+  </div>
+</div>
+
+
+{% endblock %}

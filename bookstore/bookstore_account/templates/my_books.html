@@ -1,0 +1,67 @@
+{% extends '_main_profile.html' %} {% block content %}
+    <!-- --------------------------------- Books -------------------------------- -->
+    <div class="bg-white border border-5 rounded-5">
+      <div class="bg-white p-2 m-4 rounded-5 h-100 " id="books">
+        <header class="wishlist-header d-flex flex-column justify-content-center align-items-center mt-5">
+          <lord-icon src="https://cdn.lordicon.com/hursldrn.json" trigger="loop" delay="50"
+            colors="primary:#242424,secondary:#e8b730" state="loop" style="width:180px;height:180px">
+          </lord-icon>
+          <h1 class="display-4">My Books</h1>
+        </header>
+
+        <a href="/sell-book">
+          <button class="w-25 btn btn-warning text-white btn-block rounded-3 my-2">Add New Book +</button>
+        </a>
+
+        <div class="table-contain">
+          {% if books|length > 0 %}
+          <div class="border-top border-5 border-rounded">
+            <table class="table table-striped wishlist-table">
+              <thead>
+                <tr class="text-center">
+                  <th scope="col">#</th>
+                  <th scope="col" class="table-pic"></th>
+                  <th scope="col">Book Name</th>
+                  <th scope="col">Author</th>
+                  <th scope="col">Publisher</th>
+                  <th scope="col">Price</th>
+                  <th scope="col"></th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for book in books %}
+                <tr class="text-center align-middle">
+                  <th scope="row">{{ forloop.counter }}</th>
+                  <td><img src="{{ book.image.url }}" class="img-fluid" width="100px" height="100px" alt="">
+                  </td>
+                  <td>{{ book.title }}</td>
+                  <td>{{ book.Author }}</td>
+                  <td>{{ book.publisher }}</td>
+                  <td>{{ book.price }} Af</td>
+                  <td><a href="{{ book.get_absolute_url }}"><button
+                        class="w-75 btn btn-warning text-white btn-block rounded-5">More Details</button></a></td>
+                  <td>
+                  <td><a href="/edit-my-book/{{ book.id }}"><button
+                        class="w-75 btn btn-warning text-white btn-block rounded-5">Edit</button></a></td>
+                  <td>
+                    <a href="/remove-my-book/{{ book.id }}"> <lord-icon src="https://cdn.lordicon.com/qjwkduhc.json"
+                        trigger="loop-on-hover" delay="300" colors="primary:#646e78,secondary:#545454,tertiary:#e8b730"
+                        style="width:70px;height:70px">
+                      </lord-icon></a>
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+            {% else %}
+            <div class="alert alert-warning">
+              <p>You have no books</p>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

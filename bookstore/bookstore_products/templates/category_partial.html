@@ -1,0 +1,20 @@
+<div class="list-group">
+    <button type="button" class="list-group-item list-group-item-action active bg-warning border-warning"
+        aria-current="true">
+        Category
+    </button>
+    <a href="/books">
+        <button type="button"
+        class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+        All<i class="fas fa-angle-right"></i>
+    </button>
+    </a>
+    {% for category in categories %}
+    <a href="/books/{{ category.title }}"><button type="button"
+            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+            {{ category.title }}<i class="fas fa-angle-right"></i>
+        </button>
+    </a>
+    {% endfor %}
+
+</div>

@@ -1,0 +1,94 @@
+{% extends '_main_profile.html' %} {% block content %}
+<!-- ---------------------------------- Profile ----------------------------------- -->
+<div id="profile" class="border border-5 rounded-5" >
+  <div style="height: 80vh;" class="d-flex flex-column justify-content-center">
+    <header class="d-flex flex-row justify-content-center gap-1 align-items-center mb-5 border-bottom border-2 border-warning w-50 mx-auto">
+      <lord-icon src="https://cdn.lordicon.com/ajkxzzfb.json" trigger="loop" delay="500"
+        colors="primary:#ffc738,secondary:#848484" style="width:80px;height:80px">
+      </lord-icon>
+      <h1 class="display-3">Profile</h1>
+    </header>
+    <form class="row mt-5" method="post" enctype="multipart/form-data" >
+      {% csrf_token %}
+      <div class="col-md-6" id="leftCtn">
+        <div class="mb-4 d-flex justify-content-center flex-column align-items-center" id="upload-img-div">
+          <img src=" {{ user.user_profile.profile_pic.url }} " width="180" height="180" class="mx-auto d-block "
+            id="uploadImage" alt="..." />
+          {{ editForm.profile_pic }}
+          <!-- <input type="file" id="file"> -->
+          <label for="file" id="uploadBtn">Choose Photo</label>
+        </div>
+        <div class="row">
+          <div class="col-md-1"></div>
+          <div class="col-md-9">
+            <div class="row mb-3">
+              <label for="" class="col-sm-4 col-form-label text-dark">Name</label>
+              <div class="col-sm-8">
+                {{ editForm.user_name }}
+                {% for error in editForm.user_name.errors %}
+                <p
+                  style="color:red;font-size: 14px; font-weight: bold; margin-top: 1rem;">
+                  {{error}}</p>
+                {% endfor %}
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="" class="col-sm-4 col-form-label text-dark">Email</label>
+              <div class="col-sm-8">
+                {{ editForm.email }}
+                {% for error in editForm.email.errors %}
+                <p  style="color:red;font-size: 14px; font-weight: bold; margin-top: 1rem;">{{error}}</p>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6" id="rightCtn">
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-8">
+            <div class="row mb-3">
+              <label for="" class="col-sm-3 col-form-label">City</label>
+              <div class="col-sm-9">
+                {{ editForm.city }}
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="" class="col-sm-3 col-form-label">Address</label>
+              <div class="col-sm-9">
+                {{ editForm.address }}
+              </div>
+            </div>
+            <fieldset class="row mb-3">
+              <legend class="col-form-label col-sm-3 pt-0">Gender</legend>
+              <div class="col-sm-9 gender-radios">
+                {{ editForm.gender }}
+              </div>
+            </fieldset>
+            <div class="row mb-3">
+              <label for="" class="col-sm-3 col-form-label"><small> Phone Number</small></label>
+              <div class="col-sm-9">
+                {{ editForm.phone_num }}
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="" class="col-sm-3 col-form-label"><small> Whatsapp Number</small></label>
+              <div class="col-sm-9">
+                {{ editForm.whatsapp_num }}
+              </div>
+            </div>
+          </div>
+          <div class="row d-grid gap-2 col-6 mx-auto">
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-warning text-white w-50 mx-auto mt-5" type="submit">
+        Save Changes
+      </button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

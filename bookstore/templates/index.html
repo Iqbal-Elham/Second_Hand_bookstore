@@ -1,0 +1,185 @@
+{% extends 'shared/_mainLayout.html' %} {% load static %} {% block content %}
+<head>
+  <title>Second Handed Online Bookstore</title>
+</head>
+
+<!-- ------------------pics slider -------------------------------- -->
+
+<div class="slide-wrapper owl-carousel owl-theme bg-slider" id="hero-slider">
+  <div class="slide2 min-vh-100 bg-cover d-flex align-items-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h1 class="text-uppercase text-white display-5" id="slide-font">
+            work smart
+          </h1>
+          <h1 class="text-uppercase my-3 text-white display-1" id="slide-font">
+            study hard
+          </h1>
+          <a href="#" class="btn btn-brand">Get Started</a>
+          <a href="#" class="btn btn-outline-light ms-md-3">Our Works</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide1 min-vh-100 bg-cover d-flex align-items-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="text-uppercase text-white display-5" id="slide-font">
+            work smart
+          </h1>
+          <h1 class="text-uppercase my-3 text-white display-1" id="slide-font">
+            study hard
+          </h1>
+          <a href="#" class="btn btn-brand">Get Started</a>
+          <a href="#" class="btn btn-outline-light ms-md-3">Our Works</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide3 min-vh-100 bg-cover d-flex align-items-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="text-uppercase text-white display-5" id="slide-font">
+            work smart
+          </h1>
+          <h1 class="text-uppercase my-3 text-white display-1" id="slide-font">
+            study hard
+          </h1>
+          <a href="#" class="btn btn-brand">Get Started</a>
+          <a href="#" class="btn btn-outline-light ms-md-3">Our Works</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide4 min-vh-100 bg-cover d-flex align-items-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="text-uppercase text-white display-5" id="slide-font">
+            work smart
+          </h1>
+          <h1 class="text-uppercase my-3 text-white display-1" id="slide-font">
+            study hard
+          </h1>
+          <a href="#" class="btn btn-brand">Get Started</a>
+          <a href="#" class="btn btn-outline-light ms-md-3">Our Works</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide5 min-vh-100 bg-cover d-flex align-items-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="text-uppercase text-white display-5" id="slide-font">
+            work smart
+          </h1>
+          <h1 class="text-uppercase my-3 text-white display-1" id="slide-font">
+            study hard
+          </h1>
+          <a href="#" class="btn btn-brand">Get Started</a>
+          <a href="#" class="btn btn-outline-light ms-md-3">Our Works</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide6 min-vh-100 bg-cover d-flex align-items-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="text-uppercase text-white display-5" id="slide-font">
+            work smart
+          </h1>
+          <h1 class="text-uppercase my-3 text-white display-1" id="slide-font">
+            study hard
+          </h1>
+          <a href="#" class="btn btn-brand">Get Started</a>
+          <a href="#" class="btn btn-outline-light ms-md-3">Our Works</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- -----------------------featured books slider --------------------------------- -->
+<section class="featured" id="featured">
+  <h1 class="heading"><span>Most Visited Books</span></h1>
+  <div class="swiper container featured-slider">
+    <div class="swiper-wrapper">
+
+      {% for book in most_visited %}
+      {% for bk in book %}
+      
+      <div class="swiper-slide box">
+        <div class="icons">
+          <a href="" class="fas fa-search"></a>
+          <a href="" class="fas fa-heart"></a>
+          <a href="{{ bk.get_absolute_url }}" class="fas fa-eye"></a>
+        </div>
+        <div class="image">
+          <img src="{{ bk.image.url }}" alt="" />
+        </div>
+        <div class="content">
+          <h3>{{ bk.title }}</h3>
+          <h4>{{ bk.Author }}</h4>
+          <div class="price">{{ bk.price }}</div>
+          <a href="{{ bk.get_absolute_url }}" class="btn btn-warning text-white">contact to seller</a>
+        </div>
+      </div>
+      {% endfor %}
+      {% endfor %}
+
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</section>
+
+<!-- -----------------------------arrivals slider ----------------------------- -->
+
+<section class="arrivals" id="arrivals">
+  <h1 class="heading"><span>Latest Books</span></h1>
+  <div class="swiper container arrivals-slider">
+    <div class="swiper-wrapper">
+      {% for book in latest_books %}
+      {% for bk in book %}
+      <a href="{{ bk.get_absolute_url }}" class="swiper-slide box">
+        <div class="image">
+          <img src="{{ bk.image.url }}" alt="" />
+        </div>
+        <div class="content">
+          <h3>{{ bk.title }}</h3>
+          <div class="price">{{ bk.price }}</div>
+          <p class="text-dark">Author: {{ bk.Author }}</p>
+        </div>
+      </a>
+
+      {% endfor %}
+      {% endfor %}
+    </div>
+  </div>
+  <div class="swiper container arrivals-slider">
+    <div class="swiper-wrapper">
+      {% for book in latest_books2 %}
+      {% for bk in book %}
+      <a href="{{ bk.get_absolute_url }}" class="swiper-slide box">
+        <div class="image">
+          <img src="{{ bk.image.url }}" alt="" />
+        </div>
+        <div class="content">
+          <h3>{{ bk.title }}</h3>
+          <div class="price">{{ bk.price }}</div>
+          <p class="text-dark">Author: {{ bk.Author }}</p>
+        </div>
+      </a>
+
+      {% endfor %}
+      {% endfor %}
+    </div>
+  </div>
+
+</section>
+
+{% endblock %}

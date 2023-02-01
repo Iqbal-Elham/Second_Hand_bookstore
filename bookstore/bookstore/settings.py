@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+from .jazzmin import JAZZMIN_SETTINGS
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,17 +27,31 @@ SECRET_KEY = 'django-insecure-rriiq@!0lqkt)crgz$(8d78ixc*n0ogv&9-08-m$r%4l)od965
 DEBUG = True
 
 ALLOWED_HOSTS = []
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+EMAIL_FILE_PATH = str(BASE_DIR.joinpath('sent_emails'))
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    # 'admin_tools_stats',
+    # 'django_nvd3',
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_render_partial',
+    'bookstore_account',
+    'bookstore_products',
+    'bookstore_category',
+    'bookstore_contact_us',
+    'bookstore_wishlist',
+    'bookstore_comments',
+    #  'google_translate',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +69,7 @@ ROOT_URLCONF = 'bookstore.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / "templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -62,6 +77,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.request'
             ],
         },
     },
@@ -99,7 +115,37 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
+JAZZMIN_UI_TWEAKS = {
+    "navbar_small_text": True,
+    "footer_small_text": False,
+    "body_small_text": False,
+    "brand_small_text": False,
+    "brand_colour": "navbar-gray",
+    "accent": "accent-warning",
+    "navbar": "navbar-warning navbar-light",
+    "no_navbar_border": False,
+    "navbar_fixed": True,
+    "layout_boxed": False,
+    "footer_fixed": False,
+    "sidebar_fixed": True,
+    "sidebar": "sidebar-dark-warning",
+    "sidebar_nav_small_text": True,
+    "sidebar_disable_expand": False,
+    "sidebar_nav_child_indent": False,
+    "sidebar_nav_compact_style": False,
+    "sidebar_nav_legacy_style": False,
+    "sidebar_nav_flat_style": False,
+    "theme": "litera",
+    "dark_mode_theme": "cyborg",
+    "button_classes": {
+        "primary": "btn-primary",
+        "secondary": "btn-secondary",
+        "info": "btn-info",
+        "warning": "btn-warning",
+        "danger": "btn-danger",
+        "success": "btn-success"
+    }
+}
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
@@ -117,7 +163,19 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+STATICFILES_DIRS = [
+    BASE_DIR / "assets",
+]
+
+STATIC_ROOT =  BASE_DIR / "static_cdn/static_root"
+
+MEDIA_URL = 'media/'
+MEDIA_ROOT =  BASE_DIR / "static_cdn/media_root"
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+JAZZMIN_SETTINGS = JAZZMIN_SETTINGS

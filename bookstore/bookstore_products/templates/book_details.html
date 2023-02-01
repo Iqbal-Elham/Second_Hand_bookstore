@@ -1,0 +1,127 @@
+{% extends 'shared/_mainLayout.html' %} 
+{% load static %} 
+{% load render_partial %}
+{% block content %}
+
+<h1 class="heading"><span>Book Detail</span></h1>
+<container class="book-detail">
+  <div class="detail-category" id="">
+    {% render_partial 'category_partial' %}
+</div>
+
+  <div class="book-section  ">
+    <div class="book-image">
+      <img src=" {{ books.image.url }} " width="270px" alt="" />
+    </div>
+    <div class="description">
+      <table class="desc-table">
+        <tr>
+          <td class="desc-book-title" colspan="2">{{ books.title }}</td>
+        </tr>
+        <tr>
+          <td>Author:</td>
+          <td>{{ books.Author }}</td>
+        </tr>
+        <tr>
+          <td>publisher:</td>
+          <td>{{ books.publisher }}</td>
+        </tr>
+        <tr>
+          <td>Edition:</td>
+          <td>{{ books.edition }}</td>
+        </tr>
+        <tr>
+          <td>Language:</td>
+          <td>{{ books.language }}</td>
+        </tr>
+        <tr>
+          <td>price:</td>
+          <td><strong>{{ books.price }} </strong><span>AF</span></td>
+        </tr>
+        <tr>
+          <td>date:</td>
+          <td>{{ books.Date }}</td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <h3>Description:</h3>
+            {{ books.description }}
+          </td>
+        </tr>
+      </table>
+      <form method="post" action="/user-wishlist">
+        {% csrf_token %}
+        {{ wish_form.book_id }}
+        <button type="submit" class="btn btn-warning my-3 text-white">Add to favorites</button>
+      </form>
+    </div>
+  </div>
+  <div class="owner description">
+    <div class="owner-img">
+      <img src="{{ books.user.user_profile.profile_pic.url }}"  width=200 alt="" />
+    </div>
+    <div class="owner-desc">
+      <table class="desc-table">
+        <tr>
+          <td class="desc-book-title" colspan="2">Seller specifications</td>
+        </tr>
+        <tr>
+          <td>Name:</td>
+          <td>{{ books.user.username }}</td>
+        </tr>
+        <tr>
+          <td>Address:</td>
+          <td>{{ books.user.user_profile.address }}</td>
+        </tr>
+        <tr>
+          <td>phone Num:</td>
+          <td>{{ books.user.user_profile.phone_num }}</td>
+        </tr>
+      </table>
+      <div class="owner-icons">
+        <a href="" class="text-secondary"
+          ><i class="fa-brands fa-whatsapp text-warning"></i> Whatsapp: &emsp; {{ books.user.user_profile.whatsapp_num }}</a
+        >
+    </div>
+    </div>
+  </div>
+  
+  <div class="message description px-5 py-4">
+    <h2><b>Comments</b></h1>
+    {% for comment in comments %}
+    <div class="all-commnets d-flex gap-4 mb-3">
+      <img src="{{ comment.user.user_profile.profile_pic.url }}" alt="" width="50" height="50" class="rounded-circle">
+      <div class="user ">
+        <p class="h5">{{ comment.user.username }} <span class="text-secondary h6">{{ comment.date }}</span></p>
+        <p class="h6">{{ comment.comment }}</p>
+      </div>
+    </div>
+      {% endfor %}
+    {% if request.user.is_authenticated %}
+    <form action="" method="post" class="row mt-4">
+      {% csrf_token %}
+      <div class="col-md-8">{{ commentForm.comment }}</div>
+      <button type="submit" class="btn btn-warning btn-block text-white col-md-4">
+        Comment
+      </button>
+    </form>
+      {% endif %}
+  </div>
+</container>
+<section class="featured" id="featured">
+  <h1 class="heading"><span>Related Books</span></h1>
+  <div class="swiper container featured-slider">
+    <div class="swiper-wrapper">
+    
+      {% for related in related_books %}
+        {% for bk in related %}
+        {% include './book_item_component.html' with books=bk %}
+        {% endfor %}
+      {% endfor %}
+    
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% load static %} {% load render_partial %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% include 'shared/_headerReferences.html' %}
+  </head>
+  <!-- data-bs-spy="scroll" data-bs-target=".navbar" -->
+
+  <body>
+    {% include './header.html' %}
+    
+   
+
+    <!-- ---------------------------------- content -------------------------------- -->
+    {% block content %}{% endblock %}
+
+    <!-- ------------- footer-----------------------  -->
+    {% render_partial 'footer' %}
+
+    <!-- ----------------------------------- Loader ----------------------------------- -->
+    <div class="loader-container">
+      <img src="{% static 'images/loader-img-y.gif' %}" alt="" />
+    </div>
+
+    <!-- ================= footer references ====================    -->
+    {% include './_footerReferences.html' %}
+  </body>
+</html>

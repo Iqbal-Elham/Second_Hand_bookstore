@@ -1,0 +1,84 @@
+{% extends 'shared/_mainLayout.html' %}
+{% load static %}
+{% block content %}
+<h1 class="heading"><span>Location</span></h1>
+<div class="d-flex justify-content-center m-sm-4 ">
+    <iframe class="bg-white p-3 border border-warning border-rounded" src="https://www.google.com/maps/embed?pb=!1m24!1m12!1m3!1d1643.6742026039394!2d69.14280992197645!3d34.51939994654959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m9!3e2!4m3!3m2!1d34.519138399999996!2d69.1437122!4m3!3m2!1d34.5192232!2d69.143867!5e0!3m2!1sen!2s!4v1672158601590!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <!-- <img src="{% static 'images/map.jpg' %}" class="bg-white p-3 img-fluid border border-warning border-rounded" alt=""> -->
+</div>
+<h2 class="heading "><span>Let's Start a Conversation</span></h2>
+
+<div class="">
+    <div class="row mx-2 mx-md-5 bg-white border-rounded p-4 my-4">
+        <div class="col-md-5">
+            <div class="d-flex justify-content-center mb-4">
+                <lord-icon src="https://cdn.lordicon.com/oaflahpk.json" trigger="loop" delay="2000"
+                    colors="primary:#e8b730" style="width:50px;height:50px">
+                </lord-icon>
+                <h1 class="text-center">Contact Us</h1>
+            </div>
+            <p class="h5 mb-4">Have an enquiry? or any project details to discuss? Just leave your details below, we
+                will whistle back
+                shortly. </p>
+            <h4>Address: <span class="h5 mb-4">Kart e Sakhi, Kabul, Afghanistan</span></h4>
+            <h4>phone: <span class="h5 mb-4">+93 765 181 256</span></h4>
+            <h4>Whatsapp: <span class="h5 mb-4">+93 744 260 004</span></h4>
+            <h4>Email: <span class="h5 mb-4">iqbal.elham7@gmail.com</span></h4>
+            <div class="d-flex justify-content-center gap-2 mt-3">
+                <lord-icon src="https://cdn.lordicon.com/uvqnvwbl.json" trigger="loop" delay="2000"
+                    colors="primary:#e8b730" style="width:32px;height:32px">
+                </lord-icon>
+                <h2 class="text-center">Social Links</h2>
+            </div>
+            <div class="text-center mt-3">
+                <a target="_blank" href="https://www.facebook.com/iqbal.elh/"><i class="text-dark h2 mx-2 fa-brands fa-facebook"></i></a>
+                <a target="_blank" href="https://www.instagram.com/iqbal_elham/"><i class="text-dark h2 mx-2 fa-brands fa-instagram"></i></a>
+                <a target="_blank" href="https://www.linkedin.com/in/iqbal-elham-8830aa19a/"><i class="text-dark h2 mx-2 fa-brands fa-linkedin"></i></a>
+                <a target="_blank" href="https://github.com/Iqbal-Elham"><i class="text-dark h2 mx-2 fa-brands fa-github"></i></a>
+            </div>
+
+        </div>
+        <div class="col-md-7">
+            <div class="d-flex justify-content-center mb-3">
+                <lord-icon src="https://cdn.lordicon.com/pkmkagva.json" trigger="loop" delay="2000"
+                    colors="primary:#e8b730" style="width:45px;height:45px">
+                </lord-icon>
+                <h1 class="text-center mb-3">How can we help you?</h1>
+            </div>
+
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="fullname">Full name</label>
+                        {{ contactForm.full_name }}
+                        {% for error in contactForm.full_name.errors %}
+                            <p class="danger">{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="email">Email</label>
+                        {{ contactForm.email }}
+                        {% for error in contactForm.email.errors %}
+                        <p class="danger">{{ error }}</p>
+                    {% endfor %}
+                    </div>
+                </div>
+                <label for="inputSubject">Subject</label>
+                {{ contactForm.subject }}
+                {% for error in contactForm.subject.errors %}
+                <p class="danger">{{ error }}</p>
+            {% endfor %}
+                <label for="inputMessage">Message</label>
+               {{ contactForm.message }}
+               {% for error in contactForm.message.errors %}
+               <p class="danger">{{ error }}</p>
+           {% endfor %}
+                <button type="submit" class="btn btn-warning w-50 btn-block mt-3 text-white d-block mx-auto"><span
+                        class="h4">Send</span></button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

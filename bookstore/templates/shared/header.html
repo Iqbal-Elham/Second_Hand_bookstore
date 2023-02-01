@@ -1,0 +1,97 @@
+{% load static %}
+<!-- ------------------------------navbar 1--------------------------- -->
+<nav id="nav1" class="navbar navbar-expand-lg bg-dark pt-2 px-lg-5">
+    <div class="container-fluid d-flex justify-content-center  justify-content-md-between">
+        <a href="" class="navbar-brand d-flex align-items-center justify-content-center ">
+            <lord-icon src="https://cdn.lordicon.com/qvbrkejx.json" trigger="loop" delay="2000" colors="primary:#ffffff"
+                style="width:35px;height:35px;">
+            </lord-icon>
+            <div class="h2 text-white m-2">THE BOOK BAZAAR</div>
+        </a>
+        <div id="nav1-icons">
+
+            <a href="/wishlist">
+                <button type="button" class="btn text-light position-relative">
+                    <i class="fa-solid fa-heart">Wish list</i>
+                    <!-- <span class="position-absolute top-0 start-100 translate-middle badge bg-warning">2</span> -->
+                </button>
+            </a>
+            {% if not request.user.is_authenticated %}
+            <a href="/login">
+                <button type="button" class="btn text-light position-relative" id="login-btn">
+                    <i class="fa-solid fa-lock"> Login / Register</i>
+                </button>
+            </a>
+            {% else %}
+            <a href="/user">
+                <button type="button" class="btn text-light position-relative">
+                    <i class="fa-solid fa-user"> Your Account</i>
+                </button>
+            </a>
+            <a href="/logout">
+                <button type="button" class="btn text-light position-relative" id="login-btn">
+                    <i class="fa-solid fa-lock"> Logout</i>
+                </button>
+            </a>
+            {% endif %}
+
+            <button type="button" id="search-btn" class="btn text-light position-relative">
+                <i class="fa-solid fa-search"></i>
+            </button>
+            <div id="search-form">
+                <form action="/books/search" class="d-flex" role="search">
+                    <input class="form-control border-rounded bg-light me-2" type="search" placeholder="Search"
+                        aria-label="Search" value="{{ request.GET.q }}" name="q" />
+                    <button class="btn btn-light border-rounded" type="submit">
+                        <i class="fa-solid fa-search fa-lg"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- --------------------------------navbar 2------------------------------ -->
+<div class="container-fluid sticky-top" id="nav2">
+    <nav class="navbar navbar-expand-lg bg-warning row px-5">
+        <div class="col-sm-12 col-lg-8 col-md-8">
+            <ul class="nav" id="nav2">
+                <li class="nav-item">
+                    <a href="/" class="nav-link text-light">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/books" class="nav-link text-light">Buy Books</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/sell-book" class="nav-link text-light">Sell Books</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/contact-us" class="nav-link text-light">Contact us</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-sm-12 col-lg-4 col-md-4">
+            <form action="/books/search" class="d-flex" role="search">
+                <input class="form-control border-rounded bg-light me-2" type="search" placeholder="Search"
+                    aria-label="Search" value="{{ request.GET.q }}" name="q" />
+                <button class="btn btn-light border-rounded" type="submit">
+                    <i class="fa-solid fa-search fa-lg"></i>
+                </button>
+            </form>
+        </div>
+    </nav>
+</div>
+<!-- ------------bottom navbar------------- -->
+<nav class="nav d-flex justify-content-center" id="bottom-navbar">
+    <li class="nav-item">
+        <a href="/" class="nav-link text-light"><i class="fa-solid fa-home fa-xl"></i></a>
+    </li>
+    <li class="nav-item">
+        <a href="/books" class="nav-link text-light"><i class="fa-solid fa-book fa-xl"></i></a>
+    </li>
+    <li class="nav-item">
+        <a href="/sell-book" class="nav-link text-light"><i class="fa-solid fa-address-card fa-xl"></i></a>
+    </li>
+    <li class="nav-item">
+        <a href="/contac-us" class="nav-link text-light"><i class="fa-solid fa-phone fa-xl"></i></a>
+    </li>
+</nav>
