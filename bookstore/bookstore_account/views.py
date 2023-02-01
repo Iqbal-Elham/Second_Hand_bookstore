@@ -58,12 +58,11 @@ def user_account(request):
     user = User.objects.get(id=user_id)
     books = Book.objects.filter(user=user)
     profile = user_profile.objects.filter(user=request.user).first()
-    editForm = editRegisterForm(request.POST or None, request.FILES or None, 
+    editForm = editRegisterForm(request.POST or None, request.FILES or None,
     initial={
         'user_name':user.username, 
         'email':user.email,
         'profile_pic':profile.profile_pic,
-        'date_of_birth':profile.date_of_birth,
         'city':profile.city,
         'address':profile.address,
         'gender':profile.gender,
@@ -74,7 +73,6 @@ def user_account(request):
         profile_pic = editForm.cleaned_data.get('profile_pic')
         user_name = editForm.cleaned_data.get('user_name')
         email = editForm.cleaned_data.get('email')
-        date_of_birth = editForm.cleaned_data.get('date_of_birth')
         city = editForm.cleaned_data.get('city')
         address = editForm.cleaned_data.get('address')
         gender = editForm.cleaned_data.get('gender')
@@ -82,7 +80,6 @@ def user_account(request):
         whatsapp_num = editForm.cleaned_data.get('whatsapp_num')
         user.username = user_name
         user.email = email
-        user.user_profile.date_of_birth = date_of_birth
         user.user_profile.city = city
         user.user_profile.address = address
         user.user_profile.gender = gender
@@ -95,7 +92,6 @@ def user_account(request):
     context = {
             'editForm' : editForm,
             'books' : books,
-            # 'profile_pic' :user,
         }
 
     return render(request, './user_account.html', context)
@@ -115,7 +111,7 @@ def remove_my_book(request, *args, **kwargs):
         book_detail = Book.objects.get_queryset().get(id=book_id)
         if book_detail is not None:
             book_detail.delete()
-    return redirect('/user#books')
+    return redirect('/my-books')
 
 
 

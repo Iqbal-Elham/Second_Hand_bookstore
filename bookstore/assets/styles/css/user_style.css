@@ -21,6 +21,12 @@ a {
   transition: width none;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0;
+}
+
 ::-webkit-scrollbar {
   width: 0.6rem;
   border-left: 1px solid #e6ecf8;
@@ -77,7 +83,8 @@ html {
   /* overflow: auto; */
   padding: 4rem;
   z-index: 3;
-  background: linear-gradient(#ffbb00, #ffd504d3);
+  /* background: linear-gradient(#ff7504d3, #ffa704d3, #ffbb00); */
+  background: linear-gradient(45deg, rgb(255, 38, 0), #ff7b00, #ffbb00);
 }
 
 .user_sidebar a {
@@ -113,6 +120,8 @@ html {
   border: 1px solid var(--color);
 
 }
+
+
 #file {
   display: none;
 }

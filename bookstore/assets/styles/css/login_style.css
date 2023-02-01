@@ -9,6 +9,12 @@
   --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0;
+}
+
 h1 {
   font-family: 'Lato', sans-serif;
   font-weight: 300;
@@ -25,7 +31,6 @@ p {
 
 .header {
   position: relative;
-  /* background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%); */
   background: linear-gradient(60deg, rgb(202, 79, 22) 0%, rgb(240, 200, 8) 100%);
   color: white !important;
 }

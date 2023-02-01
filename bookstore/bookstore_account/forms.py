@@ -78,12 +78,8 @@ class editRegisterForm(forms.Form):
         
     )
     email = forms.EmailField(
-        widget=forms.EmailInput(attrs={"class":"form-control","placeholder":"Enter your email"}),
+        widget=forms.EmailInput(attrs={"class":"form-control","placeholder":"Enter your email","style":"text-transform:lowercase"}),
         
-    )
-    date_of_birth = forms.DateTimeField(
-        widget=dateInput,
-
     )
     city = forms.CharField(
         widget=forms.TextInput(attrs={"class":"form-control","placeholder":"Enter your city"}),
@@ -111,7 +107,29 @@ class editRegisterForm(forms.Form):
     
     )
 
+    def clean_user_name(self):
+        username = self.cleaned_data.get('user_name', '')
 
+        try:
+            user = User.objects.get(username__iexact=username)
+            if(user):
+                raise forms.ValidationError("This username is already exist")
+        except User.DoesNotExist:
+            return username
+
+    # def clean_user_name(self):
+    #     username = self.cleaned_data.get("user_name")
+    #     username_is_exist = User.objects.filter(username=username).exists()
+    #     if username_is_exist:
+    #         raise forms.ValidationError("This username is already exist")
+    #     return username
+
+    # def clean_email(self):
+    #     email = self.cleaned_data.get("email")
+    #     email_is_exist = User.objects.filter(email=email).exists()
+    #     if email_is_exist:
+    #         raise forms.ValidationError("This email is already exist")
+    #     return email
 
 class MyPasswordChangeForm(PasswordChangeForm):
     def __init__(self, *args, **kwargs):

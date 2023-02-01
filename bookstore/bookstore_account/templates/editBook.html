@@ -1,7 +1,7 @@
 {% extends '_main_profile.html' %} {% block content %}
 
   <!-- ---------------------- edit Book ----------------------- -->
-    <div class="d-flex flex-column justify-content-center">
+    <div class="d-flex flex-column justify-content-center border border-5 rounded-5 p-4">
       <header class="d-flex flex-row justify-content-center gap-1 align-items-center my-5">
         <lord-icon src="https://cdn.lordicon.com/rfbqeber.json" trigger="loop" delay="500"
           colors="primary:#646e78,secondary:#e8b730,tertiary:#4cb4fd" style="width:80px;height:80px">
@@ -12,33 +12,30 @@
         {% csrf_token %}
         <div class="row">
           <div class="col-md-6 ">
-            <div class="mb-4 d-flex justify-content-center flex-column align-items-center" id="upload-img-div">
-              <img src=" {{ bookDetail.image.url }} " width="180" height="180" class="mx-auto d-block " id="uploadImage"
+            <div class="mb-4 d-flex justify-content-center flex-column align-items-center book-img-div" style="height: 280px; width: 210px;" id="upload-img-div">
+              <img src=" {{ bookDetail.image.url }} " width="180" height="280" class="mx-auto d-block " id="uploadImage"
                 alt="..." />
               {{ editBook.book_pic }}
               <!-- <input type="file" id="file"> -->
               <label for="file" id="uploadBtn">Choose Photo</label>
             </div>
-            <label for="" class="form-label">Book Name</label>
+            <label for="" class="form-label h4">Book Name</label>
             {{ editBook.book_name }}
-            <label for="" class="form-label">Book Author</label>
+            <label for="" class="form-label h4">Book Author</label>
             {{ editBook.book_author }}
-            <label for="" class="form-label">Book Publisher</label>
+            <label for="" class="form-labe h4l">Book Publisher</label>
             {{ editBook.book_publisher }}
-            <label for="" class="form-label">Book Language</label>
+            <label for="" class="form-label h4">Book Language</label>
             {{ editBook.book_language }} 
           </div>
           <div class="col-md-6 d-flex flex-column justify-content-end">
-
-            <label for="" class="form-label">Date <span class="text-secondary h6">(Disabled)</span></label>
-            <div class="book-date" style="pointer-events: none;">{{ editBook.date }}</div>
-            <label for="" class="form-label ">Category</label>
+            <label for="" class="form-label  h4">Category</label>
             {{ editBook.category }}
-            <label for="" class="form-label">Book Edition</label>
+            <label for="" class="form-label h4">Book Edition</label>
             {{ editBook.book_edition }}
-            <label for="" class="form-label">Book Price</label>
+            <label for="" class="form-label h4">Book Price</label>
             {{ editBook.price }}
-            <label for="" class="form-label">Description</label>
+            <label for="" class="form-label h4">Description</label>
             {{ editBook.description }}
           </div>
         </div>

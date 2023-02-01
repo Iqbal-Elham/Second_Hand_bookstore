@@ -122,9 +122,10 @@ def sellBook(request):
             edition=book_edition,
             price=price,
             language=book_language,
-            Date=date,
+            Date=datetime.today(),
             description=description,
             image=book_pic,
+            
         )
 
         instance.category.add(category)

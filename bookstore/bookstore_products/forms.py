@@ -18,16 +18,16 @@ class sellBookForm(forms.Form):
         widget=forms.TextInput(attrs={"class":"form-control mb-4", "placeholder":"Enter your Book Publisher"}),
         label="Book Publisher"
     )
-  book_edition = forms.CharField(
-        widget=forms.TextInput(attrs={"class":"form-control mb-4", "placeholder":"Enter your Book Edition"}),
+  book_edition = forms.IntegerField(
+        widget=forms.NumberInput(attrs={"class":"form-control mb-4", "placeholder":"Enter your Book Edition"}),
         label="Book Edition"
     )
   book_language = forms.CharField(
         widget=forms.TextInput(attrs={"class":"form-control mb-4", "placeholder":"Enter language of your Book"}),
         label="Book language"
     )
-  price = forms.CharField(
-        widget=forms.TextInput(attrs={"class":"form-control mb-4", "placeholder":"Enter your Book Price"}),
+  price = forms.IntegerField(
+        widget=forms.NumberInput(attrs={"class":"form-control mb-4", "placeholder":"Enter your Book Price"}),
         label="Book Price"
     )
   CHOICES =(
@@ -53,12 +53,9 @@ class sellBookForm(forms.Form):
         choices=CHOICES, 
         label="Category"
     )
-  date = forms.DateField(
-        widget=dateInput,
-
-    )
+  
   description = forms.CharField(
-    widget=forms.Textarea(attrs={'rows':"3",'class':'form-control mb-5', 'placeholder':'Enter the description of the book'}),
+    widget=forms.Textarea(attrs={'rows':"5",'class':'form-control mb-5', 'placeholder':'Enter the description of the book'}),
     label = "description"
   )
   book_pic = forms.ImageField(
