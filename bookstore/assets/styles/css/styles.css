@@ -599,7 +599,7 @@ nav .btn-light:hover {
   font-size: 26px;
 }
 .footer .about-div p{
-  color: lightblue;
+  color: rgba(173, 216, 230, 0.986);
   font-size: 20px;
   text-align: justify;
 }

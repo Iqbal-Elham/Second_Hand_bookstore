@@ -25,18 +25,18 @@
               <label for="" class="col-sm-4 col-form-label text-dark">Name</label>
               <div class="col-sm-8">
                 {{ editForm.user_name }}
-                {% for error in editForm.user_name.errors %}
+                <!-- {% for error in messages %}
                 <p
                   style="color:red;font-size: 14px; font-weight: bold; margin-top: 1rem;">
                   {{error}}</p>
-                {% endfor %}
+                {% endfor %} -->
               </div>
             </div>
             <div class="row mb-3">
               <label for="" class="col-sm-4 col-form-label text-dark">Email</label>
               <div class="col-sm-8">
                 {{ editForm.email }}
-                {% for error in editForm.email.errors %}
+                {% for error in messages %}
                 <p  style="color:red;font-size: 14px; font-weight: bold; margin-top: 1rem;">{{error}}</p>
                 {% endfor %}
               </div>

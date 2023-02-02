@@ -1,4 +1,4 @@
-{% load static %}
+{% load static %}{% load render_partial %}
 <!-- ------------------------------navbar 1--------------------------- -->
 <nav id="nav1" class="navbar navbar-expand-lg bg-dark pt-2 px-lg-5">
     <div class="container-fluid d-flex justify-content-center  justify-content-md-between">
@@ -13,7 +13,9 @@
             <a href="/wishlist">
                 <button type="button" class="btn text-light position-relative">
                     <i class="fa-solid fa-heart">Wish list</i>
-                    <!-- <span class="position-absolute top-0 start-100 translate-middle badge bg-warning">2</span> -->
+                    {% if request.user.is_authenticated %}
+                    {% render_partial 'wish_size' %}
+                    {% endif %}
                 </button>
             </a>
             {% if not request.user.is_authenticated %}
@@ -92,6 +94,6 @@
         <a href="/sell-book" class="nav-link text-light"><i class="fa-solid fa-address-card fa-xl"></i></a>
     </li>
     <li class="nav-item">
-        <a href="/contac-us" class="nav-link text-light"><i class="fa-solid fa-phone fa-xl"></i></a>
+        <a href="/contact-us" class="nav-link text-light"><i class="fa-solid fa-phone fa-xl"></i></a>
     </li>
 </nav>
