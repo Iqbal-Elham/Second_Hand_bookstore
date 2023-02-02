@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from bookstore_products.forms import sellBookForm
 from bookstore_products.models import Book
+from django.contrib import messages
 from .models import user_profile
 from .forms import editRegisterForm, login_form, register_form, MyPasswordChangeForm
 
@@ -78,7 +79,17 @@ def user_account(request):
         gender = editForm.cleaned_data.get('gender')
         phone_num = editForm.cleaned_data.get('phone_num')
         whatsapp_num = editForm.cleaned_data.get('whatsapp_num')
-        user.username = user_name
+        username_is_exist = User.objects.filter(username=user_name).exists()
+        email_is_exist = User.objects.filter(email=email).exists()
+        if username_is_exist:
+            if user.username == user_name:
+                pass
+            else:
+                messages.error(request, "The username already exists")   
+        else:
+            user.username = user_name
+
+
         user.email = email
         user.user_profile.city = city
         user.user_profile.address = address

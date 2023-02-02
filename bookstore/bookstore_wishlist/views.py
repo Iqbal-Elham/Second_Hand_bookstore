@@ -32,7 +32,9 @@ def wish_list(request, *args, **kwargs):
     if open_wish is not None :
         context['wish'] = open_wish
         context['details'] = open_wish.wishdetail_set.all()
+    print(len(context['details']))
     return render(request, 'wish_list.html', context)
+
 
 
 @login_required(login_url='/login')

@@ -3,6 +3,7 @@ import itertools
 from django.shortcuts import render
 
 from bookstore_products.models import Book
+from bookstore_wishlist.models import Wish, wishDetail
 
 # footer back code
 def footer(request):
@@ -30,3 +31,15 @@ def home_page(request):
         'latest_books2' : grouped_latest_books2,
     }
     return render(request, './index.html', context)
+
+
+# def wish_list(request, *args, **kwargs):
+#     context = {
+#         'wishLen' : None,
+#     }
+#     open_wish = Wish.objects.filter(owner_id=request.user.id).first()
+#     wish_size = open_wish.wishdetail_set.all()
+#     if open_wish is not None:
+#         context['wishLen'] = len(wish_size)
+#     return render(request, './shared/header.html', context)
+

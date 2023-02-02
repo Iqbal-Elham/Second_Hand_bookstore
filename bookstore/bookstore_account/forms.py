@@ -107,15 +107,15 @@ class editRegisterForm(forms.Form):
     
     )
 
-    def clean_user_name(self):
-        username = self.cleaned_data.get('user_name', '')
+    # def clean_user_name(self):
+    #     username = self.cleaned_data.get('user_name', '')
 
-        try:
-            user = User.objects.get(username__iexact=username)
-            if(user):
-                raise forms.ValidationError("This username is already exist")
-        except User.DoesNotExist:
-            return username
+    #     try:
+    #         user = User.objects.get(username__iexact=username)
+    #         if(user):
+    #             raise forms.ValidationError("This username is already exist")
+    #     except User.DoesNotExist:
+    #         return username
 
     # def clean_user_name(self):
     #     username = self.cleaned_data.get("user_name")
