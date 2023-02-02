@@ -17,10 +17,11 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from .views import home_page,footer
+from .views import home_page,footer, wish_size
 
 urlpatterns = [
     path('', home_page),
+    path('wish-size', wish_size, name='wish_size'),
     path('',include('bookstore_account.urls')),
     path('',include('bookstore_products.urls')),
     path('',include('bookstore_contact_us.urls')),

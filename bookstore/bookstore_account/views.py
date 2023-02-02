@@ -89,8 +89,14 @@ def user_account(request):
         else:
             user.username = user_name
 
+        if email_is_exist:
+            if user.email == email:
+                pass
+            else:
+                messages.warning(request, "The email already exists")   
+        else:
+            user.email = email
 
-        user.email = email
         user.user_profile.city = city
         user.user_profile.address = address
         user.user_profile.gender = gender
