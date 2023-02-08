@@ -9,5 +9,9 @@ class Comments(models.Model):
   comment = models.TextField()
   date = models.DateTimeField(null=True)
 
+  class Meta:
+        verbose_name = 'Comment'
+        verbose_name_plural = 'Comments'
+    
   def __str__(self):
         return str(self.user.username)

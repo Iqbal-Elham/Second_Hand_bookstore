@@ -39,7 +39,7 @@ def login_wave(request):
         if user is not None:
             login(request, user)
         else:
-            form.add_error("password", "Password does not match")
+            form.add_error("password", "wrong password")
     context = {
         "loginForm" : form,
     }
@@ -128,7 +128,7 @@ def remove_my_book(request, *args, **kwargs):
         book_detail = Book.objects.get_queryset().get(id=book_id)
         if book_detail is not None:
             book_detail.delete()
-    return redirect('/my-books')
+    return redirect('/user/my-books')
 
 
 

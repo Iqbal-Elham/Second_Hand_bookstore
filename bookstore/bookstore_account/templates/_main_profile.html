@@ -15,7 +15,7 @@
 </head>
 
 <body>
-  <div class="row ">
+  <div class="row top-nav">
     <nav class="d-flex justify-content-around align-items-center px-5 py-2 gap-4 nav-bar bg-dark">
       <h1 class="h1 nav-brand">User Account</h1>
       <div class="menu d-flex">
@@ -39,7 +39,7 @@
 
   <!-- -------------------- Sidebar -------------------------------- -->
   <div class="user_sidebar col-md-2 d-flex flex-column">
-    <img src="{{ user.user_profile.profile_pic.url }}" class="rounded-circle mb-4 mx-auto" width=170 height=170 alt="">
+    <img src="{{ user.user_profile.profile_pic.url }}" class="rounded-circle mb-4 mx-auto img-fluid" width=170 height=170 alt="">
     <p class="text-primary mb-5 text-center h3 text-uppercase">{{ user.username }}</p>
     <a href="/user#profile" type="button" class="text-light h5 ">Profile</a>
     <a href="/user/my-books" type="button" class="text-light h5 ">Your Books</a>

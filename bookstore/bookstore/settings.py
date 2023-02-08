@@ -28,10 +28,15 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
-EMAIL_FILE_PATH = str(BASE_DIR.joinpath('sent_emails'))
+# EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+# EMAIL_FILE_PATH = str(BASE_DIR.joinpath('sent_emails'))
 
-
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_HOST_USER = "iqbal.ilham.77@gmail.com"
+EMAIL_HOST_PASSWORD = 'ddff crah zbbf grsj'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 # Application definition
 
 INSTALLED_APPS = [
@@ -135,8 +140,8 @@ JAZZMIN_UI_TWEAKS = {
     "sidebar_nav_compact_style": False,
     "sidebar_nav_legacy_style": False,
     "sidebar_nav_flat_style": False,
-    "theme": "litera",
-    "dark_mode_theme": "cyborg",
+    "theme": "minty",
+    "dark_mode_theme": "None",
     "button_classes": {
         "primary": "btn-primary",
         "secondary": "btn-secondary",

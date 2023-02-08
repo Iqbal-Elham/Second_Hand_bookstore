@@ -1,0 +1,25 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: Password reset on 127.0.0.1:8000
+From: webmaster@localhost
+To: iqbal.elham7@gmail.com
+Date: Mon, 06 Feb 2023 14:57:57 -0000
+Message-ID: <167569547724.1332.2768044762975985757@Iqbal-Elham>
+
+
+You're receiving this email because you requested a password reset for your user account at 127.0.0.1:8000.
+
+Please go to the following page and choose a new password:
+
+http://127.0.0.1:8000/reset/MQ/bj7sql-164ae34d55a4f7cace5a89cbd92d0ef6/
+
+Your username, in case you’ve forgotten: iqbal
+
+Thanks for using our site!
+
+The 127.0.0.1:8000 team
+
+
+
+-------------------------------------------------------------------------------
