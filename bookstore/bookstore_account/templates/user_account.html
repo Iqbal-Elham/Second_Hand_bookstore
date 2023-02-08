@@ -1,7 +1,7 @@
 {% extends '_main_profile.html' %} {% block content %}
 <!-- ---------------------------------- Profile ----------------------------------- -->
-<div id="profile" class="border border-5 rounded-5" >
-  <div style="height: 80vh;" class="d-flex flex-column justify-content-center">
+<div id="profile" class="border border-5 rounded-5 p-5" >
+  <div class="d-flex flex-column justify-content-center">
     <header class="d-flex flex-row justify-content-center gap-1 align-items-center mb-5 border-bottom border-2 border-warning w-50 mx-auto">
       <lord-icon src="https://cdn.lordicon.com/ajkxzzfb.json" trigger="loop" delay="500"
         colors="primary:#ffc738,secondary:#848484" style="width:80px;height:80px">
@@ -12,7 +12,7 @@
       {% csrf_token %}
       <div class="col-md-6" id="leftCtn">
         <div class="mb-4 d-flex justify-content-center flex-column align-items-center" id="upload-img-div">
-          <img src=" {{ user.user_profile.profile_pic.url }} " width="180" height="180" class="mx-auto d-block "
+          <img src=" {{ user.user_profile.profile_pic.url }} " width="180" height="180" class="mx-auto d-block img-fluid"
             id="uploadImage" alt="..." />
           {{ editForm.profile_pic }}
           <!-- <input type="file" id="file"> -->

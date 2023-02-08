@@ -80,10 +80,9 @@ html {
   /* width: 300px; */
   position: fixed;
   height: 100vh;
-  /* overflow: auto; */
+  overflow: auto;
   padding: 4rem;
   z-index: 3;
-  /* background: linear-gradient(#ff7504d3, #ffa704d3, #ffbb00); */
   background: linear-gradient(45deg, rgb(255, 38, 0), #ff7b00, #ffbb00);
 }
 
@@ -107,6 +106,10 @@ html {
   padding: 0rem 5rem;
   border-radius: 2rem;
 }
+.content>div {
+  height: 80vh;
+  overflow: auto;
+}
 
 #upload-img-div {
   width: 180px;
@@ -117,7 +120,7 @@ html {
   position: relative;
   border-radius: 20%;
   overflow: hidden;
-  border: 1px solid var(--color);
+  border: 2px solid var(--black);
 
 }
 
@@ -161,4 +164,45 @@ html {
   width: 100%;
   padding: 0.4rem 1rem;
   margin-bottom: 1.6rem;
+}
+
+@media (max-width: 767px) {
+
+  .top-nav {
+    display: none !important;
+  }
+
+  .nav-brand {
+    font-size: 18px !important;
+  }
+
+  .user_sidebar {
+    display: none !important;
+    height: 100px !important;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 135vh;
+    top: 0;
+  }
+
+  .content>div {
+    padding:8px;
+    height: 130vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 80px;
+  }
+  
+  #upload-img-div {
+    width: 120px;
+    height: 120px;
+  
+  }
+
 }

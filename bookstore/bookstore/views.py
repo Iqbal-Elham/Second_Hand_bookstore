@@ -38,10 +38,8 @@ def wish_size(request):
         'wishLen' : None,
     }
     open_wish = Wish.objects.filter(owner_id=request.user.id).first()
-    wishes = open_wish.wishdetail_set.all()
     if open_wish is not None:
+        wishes = open_wish.wishdetail_set.all()
         context['wishLen'] = len(wishes)
-    print(context['wishLen'])
-    print(wishes)
     return render(request, './shared/wish_notify.html', context)
 
