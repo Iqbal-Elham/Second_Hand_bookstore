@@ -9,16 +9,16 @@ Project is in debugging mode.
 ## Built With
 
 - Html
-- Css
-- Bootstrap/Font-awsome
-- Javascript
-- python
+- CSS
+- Bootstrap/Font-Awesome
+- JavaScript
+- Python
 - Django
 - SQLite
 
 ## Live Demo (static version)
 
-This is the static version of [Webpages](https://iqbal-elham.github.io/Second-Handed-Bookstore/)
+You can checkout the project in the following link [The book Bazaar](https://iqbalel.pythonanywhere.com/)
 
  ## Get Started
 
@@ -32,16 +32,20 @@ This is the static version of [Webpages](https://iqbal-elham.github.io/Second-Ha
 ### Setup 
 
 1. Download the **Zip** file or clone the repo with:
-```bash git clone https://github.com/Iqbal-Elham/personal_portfolio.git ``` 
+```git clone https://github.com/Iqbal-Elham/Second_Hand_bookstore.git ``` 
 2. To access cloned directory run: 
-```bash cd personal_porfolio ``` 
-3. Open it with the live server 
+```cd bookstore ``` 
+3. install the following dependencies:
+- ```pip install django ``` 
+- ```pip install jazzmin ```
+- ```pip install pillow ```
 
 ### Run
 1. Activate the virtual enviroment
-``` sournce ../env/bin/activate ```
+- In linux ``` sournce ../env/bin/activate ```
+- In Windows ```../env/bin/activate```
 2. Run Server
-``` python3 manage.py runserver ```
+``` python manage.py runserver ```
 
 ## Author
 
