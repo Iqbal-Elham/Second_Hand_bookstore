@@ -16,7 +16,7 @@ Project is in debugging mode.
 - Django
 - SQLite
 
-## Live Demo (static version)
+## Live Demo
 
 You can checkout the project in the following link [The book Bazaar](https://iqbalel.pythonanywhere.com/)
 
