@@ -20,6 +20,9 @@ Project is in debugging mode.
 
 You can checkout the project in the following link [The book Bazaar](https://iqbalel.pythonanywhere.com/)
 
+Test Username: admin
+Test Password: 123123
+
  ## Get Started
 
  To get the content of this project locally you need to run the following commands in your terminal:
